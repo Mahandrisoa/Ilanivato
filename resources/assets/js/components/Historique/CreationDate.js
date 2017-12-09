@@ -27,6 +27,7 @@ export default class CreationDate extends Component {
     render() {
         let _button = null;
         let _date_creation = this.props.date_creation;
+        console.log(_date_creation);
         if (_date_creation === null) {
             _button =
                 <button className="pull-right btn btn-warning btn-xs" onClick={this.hideModal.bind(this)}>+</button>;

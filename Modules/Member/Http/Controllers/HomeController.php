@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Auth;
+use Modules\Member\Entities\Post;
 
 
 class HomeController extends Controller
@@ -17,7 +18,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        return view('member::home.home');
+    public function index()
+    {
+        $group = Auth::user()->group;
+        $posts = Post::where('group_id', $group->id)->orderBy('updated_at','desc')->get();
+        return view('member::home.home')->with(['posts' => $posts]);
     }
 }

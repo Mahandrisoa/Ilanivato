@@ -15,7 +15,6 @@ class AddUserGroupForeign extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->integer('group_id')->unsigned()->nullable();
-
             $table->foreign('group_id')->references('id')->on('groups');
         });
     }
@@ -28,7 +27,7 @@ class AddUserGroupForeign extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign('group_id');
+            $table->dropForeign('users_group_id_foreign');
         });
     }
 }

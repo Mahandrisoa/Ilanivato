@@ -4,6 +4,7 @@ namespace Modules\Member\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Modules\Member\Http\Services\PostService;
 
 class MemberServiceProvider extends ServiceProvider
 {
@@ -35,7 +36,6 @@ class MemberServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**

@@ -54,6 +54,6 @@
         <script src="{{ asset('js/laroute.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/historique-app.js') }}"></script>
-@show
+    @show
 </body>
 </html>

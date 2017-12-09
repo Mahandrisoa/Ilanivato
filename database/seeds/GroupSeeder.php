@@ -11,21 +11,13 @@ class GroupSeeder extends Seeder
      */
     public function run()
     {
-        App\Group::created([
+        \App\Group::firstOrCreate([
             'name' => 'ADMIN',
             'interlude' => 'Administration du siteweb'
         ]);
-        App\Group::created([
+        App\Group::firstOrCreate([
             'name' => 'SEKOLY ALAHADY',
             'interlude' => 'Sampana SEKOLY ALAHADY'
         ]);
-
-//        for ($i = 0; $i < 10; $i++)
-//        {
-//            \App\Group::create([
-//                'name' => 'group'.$i,
-//                'interlude' => 'interlude'. $i+1
-//            ]);
-//        }
     }
 }

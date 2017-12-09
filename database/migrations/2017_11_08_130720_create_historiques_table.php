@@ -18,6 +18,8 @@ class CreateHistoriquesTable extends Migration
             $table->date('date');
             $table->longText('evenement');
             $table->timestamps();
+            $table->integer('group_id',false, true);
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 
@@ -28,6 +30,9 @@ class CreateHistoriquesTable extends Migration
      */
     public function down()
     {
+        Schema::table('historiques', function (Blueprint $table) {
+            $table->dropForeign('historiques_group_id_foreign');
+        });
         Schema::dropIfExists('historiques');
     }
 }

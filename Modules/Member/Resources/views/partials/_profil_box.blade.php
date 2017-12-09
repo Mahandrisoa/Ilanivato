@@ -9,7 +9,7 @@
                     <div class="dropdown-menu dropdown-menu-scale pull-right">
                         <a class="dropdown-item" href>Activities</a>
                         <a class="dropdown-item" href>Feed</a>
-                        <a class="dropdown-item" href>Photo</a>
+                        <div class="dropdown-item" href>Photo</div>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item">Follow</a>
                     </div>
@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="p-a-md text-center">
-            <p class="text-center"><img src="{{ asset('images/user.jpg') }}" class="img-circle w-xs"></p>
+            <p class="text-center"><img src="{{ asset('images/bible.jpg') }}" class="img-circle w-xs"></p>
             <a href class="text-md block">{{ Auth::user()->name }}</a>
             <div>
                 <a href="" class="btn btn-icon btn-social rounded white btn-sm">
@@ -46,23 +46,23 @@
                 </a>
             </div>
             <div class="col-xs-6">
-                <a href="{{ route('membres.bureaux') }}" class="p-a block text-center">
+                <a href="{{ route('bureaux.index') }}" class="p-a block text-center">
                     <span class="block _600">*</span>
                     <span>Birao</span>
                 </a>
             </div>
         </div>
         <div class="row no-gutter b-t b-b">
+            <div class="col-xs-6">
+                <a class="p-a block text-center" href="{{ route('objectifs.index') }}">
+                    <span class="block _600">15</span>
+                    <span>Tanjona</span>
+                </a>
+            </div>
             <div class="col-xs-6 b-r">
                 <a class="p-a block text-center">
                     <span class="block _600">3219</span>
                     <span>Sary/Feo/Horonan-tsary</span>
-                </a>
-            </div>
-            <div class="col-xs-6">
-                <a class="p-a block text-center">
-                    <span class="block _600">15</span>
-                    <span>Soratra</span>
                 </a>
             </div>
         </div>

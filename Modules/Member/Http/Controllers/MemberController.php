@@ -23,11 +23,6 @@ class MemberController extends Controller
         return view('member::historiques.index',compact('group'));
     }
 
-    public function bureau()
-    {
-        return view('member::bureau.index');
-    }
-
     /**
      * Show the form for creating a new resource.
      * @return Response

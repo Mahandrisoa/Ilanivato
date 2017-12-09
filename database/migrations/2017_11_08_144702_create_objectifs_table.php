@@ -16,6 +16,8 @@ class CreateObjectifsTable extends Migration
         Schema::create('objectifs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('intitule');
+            $table->integer('group_id')->unsigned()->nullable();
+            $table->foreign('group_id')->references('id')->on('groups');
             $table->timestamps();
         });
     }
@@ -27,6 +29,9 @@ class CreateObjectifsTable extends Migration
      */
     public function down()
     {
+        Schema::table('objectifs', function (Blueprint $table) {
+            $table->dropForeign('objectifs_group_id_foreign');
+        });
         Schema::dropIfExists('objectifs');
     }
 }

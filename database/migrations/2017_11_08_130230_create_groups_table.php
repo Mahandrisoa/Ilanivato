@@ -16,7 +16,8 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->longText('interlude');
+            $table->longText('interlude')->nullable();
+            $table->date('date_creation')->nullable();
             $table->timestamps();
         });
     }

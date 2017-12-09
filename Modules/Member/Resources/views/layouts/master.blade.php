@@ -24,3 +24,6 @@
 
     </div>
 @endsection
+@section('js')
+    @parent
+@show

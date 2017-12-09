@@ -35,7 +35,7 @@ export default class Event extends Component {
             })
             .catch((error) => {
                 console.warn('ERROR :', error);
-            })
+            });
     }
 
     showModal() {

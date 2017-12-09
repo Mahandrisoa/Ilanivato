@@ -5,6 +5,10 @@ namespace Modules\Member\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Group;
+use Illuminate\Support\Facades\Storage;
+use Modules\Member\Entities\President;
 
 class BureauController extends Controller
 {
@@ -14,8 +18,10 @@ class BureauController extends Controller
      */
     public function index()
     {
-        
-        return view('member::bureau.index');
+        Storage::makeDirectory('public/bureaux');
+        $group = Auth::user()->group;
+        //dd($group->president->first()->name);
+        return view('member::bureau.index')->with(['group' => $group]);
     }
 
     /**

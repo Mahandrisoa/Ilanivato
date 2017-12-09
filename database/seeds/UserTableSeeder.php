@@ -17,18 +17,11 @@ class UserTableSeeder extends Seeder
             'password' => 'mahandrisoa',
             'group_id' => 1
         ]);
-//
-//        for ($i = 0; $i < 10 ; $i++)
-//        {
-//            $k = $i;
-//
-//            App\User::create([
-//                'name' => 'user'.$k,
-//                'email' => 'user'.$i.'@gmail.com',
-//                'password' => 'user'.$k,
-//                'group_id' => rand(1,3)
-//            ]);
-//            ++$k;
-//        }
+        \App\User::firstOrCreate([
+            'name' => 'Sekoly alahady',
+            'email' => 'sa@ilanivato.com',
+            'password' => 'sekoly',
+            'group_id' => 2
+        ]);
     }
 }
