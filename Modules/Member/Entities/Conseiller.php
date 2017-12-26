@@ -10,6 +10,8 @@ class Conseiller extends Model
 
     protected $table = 'conseillers';
 
+    public $timestamps = false;
+
     public function group()
     {
         return $this->belongsTo('App\Group');

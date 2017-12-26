@@ -3,10 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Group extends Model
 {
-    protected $fillable = ['name', 'interlude','date_creation'];
+    use Notifiable;
+
+    protected $fillable = ['name', 'interlude', 'date_creation', 'directoryName'];
 
     protected $guarded = ['id'];
 
@@ -31,6 +34,11 @@ class Group extends Model
     }
 
     public function tresorier() {
+        return $this->hasOne('Modules\Member\Entities\Tresorier');
+    }
+
+    public function avatar()
+    {
         return $this->hasOne('Modules\Member\Entities\Tresorier');
     }
 

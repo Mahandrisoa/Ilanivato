@@ -3,12 +3,19 @@
 namespace Modules\Admin\Http\Controllers;
 
 use App\Group;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Modules\Admin\Http\Requests\CreateGroupRequest;
 use Modules\Admin\Http\Requests\EditGroupRequest;
+use Modules\Admin\Http\Services\GroupServiceInterface;
 
 class GroupController extends Controller
 {
+    private $groupService;
+
+    public function __construct(GroupServiceInterface $groupService)
+    {
+        $this->groupService = $groupService;
+    }
 
     /**
      * Display a listing of the resource.
@@ -17,9 +24,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        //Get all users and pass it to the view
-        $groups = Group::all();
-        return view('admin::groups.index')->with('groups', $groups);
+        return view('admin::groups.index')->with('groups', $this->groupService->getAll());
     }
     /**
      * Display the specified resource.
@@ -48,16 +53,10 @@ class GroupController extends Controller
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateGroupRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:120|unique:groups',
-        ]);
-        $group = Group::create($request->all());
-
-        return redirect()->route('groups.index')
-            ->with('flash_message',
-                'Sampana/Sampan\'Asa,Fikamanana ajouté avec success.');
+        $this->groupService->store($request);
+        return redirect()->route('groups.index')->with('flash_message', 'Sampana/Sampan\'Asa,Fikamanana ajouté avec success.');
     }
 
     /**
@@ -80,11 +79,8 @@ class GroupController extends Controller
      */
     public function update(EditGroupRequest $request, Group $group)
     {
-        $group->fill($request->all());
-        $group->save();
-        return redirect()->route('groups.index')
-            ->with('flash_message',
-                'Modification de Sampana/Sampan\'Asa,Fikamanana avec success.');
+        $this->groupService->update($request, $group);
+        return redirect()->route('groups.index')->with('flash_message', 'Modification de Sampana/Sampan\'Asa,Fikamanana avec success.');
     }
 
     /**
@@ -95,7 +91,7 @@ class GroupController extends Controller
      */
     public function destroy(Group $group)
     {
-        $group->delete();
+        $this->groupService->delete($group);
         return redirect()->route('groups.index')
             ->with('flash_message', 'Sampana/Sampan\'Asa,Fikamanana supprimé avec success.');
     }

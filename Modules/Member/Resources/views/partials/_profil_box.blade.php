@@ -1,4 +1,4 @@
-<div class="col-sm-6 pull-md-6 col-md-3">
+<div class="col-sm-6 pull-md-9 col-md-3">
     <div class="box">
         <div class="box-tool">
             <ul class="nav">

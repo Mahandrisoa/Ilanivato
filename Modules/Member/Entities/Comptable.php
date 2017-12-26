@@ -15,6 +15,8 @@ class Comptable extends Model
 
     protected $table = 'comptables';
 
+    public $timestamps = false;
+
     public function group()
     {
         return $this->belongsTo('App\Group');

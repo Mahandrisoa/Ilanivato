@@ -10,6 +10,8 @@ class Secretaire extends Model
 
     protected $table = 'secretaires';
 
+    public $timestamps = false;
+
     public function group()
     {
         return $this->belongsTo('App\Group');

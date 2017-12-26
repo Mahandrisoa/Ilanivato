@@ -13,11 +13,15 @@ class GroupSeeder extends Seeder
     {
         \App\Group::firstOrCreate([
             'name' => 'ADMIN',
-            'interlude' => 'Administration du siteweb'
+            'interlude' => 'Administration du siteweb',
+            'directoryName' => 'ADMIN'
         ]);
+        \Illuminate\Support\Facades\Storage::makeDirectory('/public/ADMIN/');
         App\Group::firstOrCreate([
             'name' => 'SEKOLY ALAHADY',
-            'interlude' => 'Sampana SEKOLY ALAHADY'
+            'interlude' => 'SEKOLY ALAHADY',
+            'directoryName' => 'SEKOLY_ALAHADY'
         ]);
+        \Illuminate\Support\Facades\Storage::makeDirectory('/public/SEKOLY_ALAHADY/');
     }
 }

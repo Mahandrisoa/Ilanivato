@@ -10,6 +10,8 @@ class Tresorier extends Model
 
     protected $table = 'tresoriers';
 
+    public $timestamps = false;
+
     public function group()
     {
         return $this->belongsTo('App\Group');

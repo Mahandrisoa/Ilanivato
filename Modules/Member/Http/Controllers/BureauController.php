@@ -6,21 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Group;
-use Illuminate\Support\Facades\Storage;
-use Modules\Member\Entities\President;
 
 class BureauController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
     public function index()
     {
-        Storage::makeDirectory('public/bureaux');
         $group = Auth::user()->group;
-        //dd($group->president->first()->name);
         return view('member::bureau.index')->with(['group' => $group]);
     }
 

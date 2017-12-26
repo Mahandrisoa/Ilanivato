@@ -14,7 +14,7 @@ class ObjectifSeeder extends Seeder
         for($i =0 ;$i< 10;$i++){
             \Modules\Member\Entities\Objectif::create([
                 'intitule' => 'Objectif numero : $i',
-                'group_id' => 3
+                'group_id' => 2
             ]);
         }
     }

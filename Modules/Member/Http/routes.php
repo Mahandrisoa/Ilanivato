@@ -12,9 +12,15 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'home', 'namespace' =>
     Route::resource('/objectifs','ObjectifController');
     Route::resource('/bureaux','BureauController');
 
+    /**
+     * for the president
+     */
+    Route::post('/bureaux/president/{president}', 'PresidentController@update')->name('presidents.update');
+    
     Route::get('/date_creation','CreationDateController@index');
     Route::post('date_creation','CreationDateController@store');
     Route::put('/date_creation','CreationDateController@udpate');
 
+    Route::resource('/fiainam-panahy', 'FiainamPanahyController');
 });
 

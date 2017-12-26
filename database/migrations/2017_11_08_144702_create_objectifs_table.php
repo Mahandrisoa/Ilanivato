@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateObjectifsTable extends Migration
 {
@@ -17,7 +17,7 @@ class CreateObjectifsTable extends Migration
             $table->increments('id');
             $table->string('intitule');
             $table->integer('group_id')->unsigned()->nullable();
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->timestamps();
         });
     }

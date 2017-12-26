@@ -15,13 +15,15 @@
                             <div class="dropdown-menu dropdown-menu-scale pull-right" style="width: 500px;">
                                 <div class="dropdown-item">
                                     <div class="box-body">
-                                        <form action="" class="form-horizontal">
+                                        {{ Form::open(array('route' => array( 'presidents.update', $group->president->id ), 'files' => true )) }}
+                                        {{csrf_field()}}
                                             <div class="form-group row">
                                                 <label for="presidentName"
                                                        class="col-sm-2 form-control-label">Anarana</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="presidentName"
-                                                           name="presidentName" value="{{$group->president->name}}"
+                                                           name="presidentName"
+                                                           value="{{ $group->president->name }}"
                                                            required/>
                                                 </div>
                                             </div>
@@ -30,8 +32,7 @@
                                                        class="col-sm-2 form-control-label">Sary</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-control-file" id="presidentAvatar"
-                                                           name="presidentAvatar"
-                                                           placeholder="Aucun"/>
+                                                           name="presidentAvatar"/>
                                                 </div>
                                             </div>
                                             <div class="divider"></div>
@@ -39,17 +40,18 @@
                                                 <input type="submit" class="btn pull-right btn-sm amber-500"
                                                        style="color:rgba(255, 255, 255, 0.87);" value="Modifier">
                                             </div>
-                                        </form>
+                                        {{ Form::close() }}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </h6>
                     <div class="list-left">
-                        <img src="{{ asset('images/a0.jpg ') }}" class="w-40 circle">
+                        <img src="{{ asset('uploads/'.$group->directoryName.'/avatar/'. $group->president->avatar) }}"
+                             class="w-40 circle">
                     </div>
                     <div class="list-body">
-                        <a href="" class="_500">{{$group->president->name}}</a>
+                        <a href="" class="_500">{{ $group->president->name }}</a>
                         <small class="block text-muted"></small>
                     </div>
                 </div>
@@ -68,7 +70,8 @@
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="vicePresidentName"
                                                            name="vicePresidentName"
-                                                           value="{{$group->vicePresident->name}}" required/>
+                                                           value="{{ $group->vicePresident->name }}"
+                                                           required/>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -95,7 +98,7 @@
                         <img src="{{ asset('images/a0.jpg ') }}" class="w-40 circle">
                     </div>
                     <div class="list-body">
-                        <a href="" class="_500">{{$group->vicePresident->name}}</a>
+                        <a href="" class="_500">{{ $group->vicePresident->name }}</a>
                     </div>
                 </div>
                 <div class="list-item">
@@ -112,7 +115,8 @@
                                                        class="col-sm-2 form-control-label">Anarana</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="secretaireName"
-                                                           name="presidentName" value="{{$group->secretaire->name}}"
+                                                           name="presidentName"
+                                                           value="{{ $group->secretaire->name }}"
                                                            required/>
                                                 </div>
                                             </div>
@@ -140,7 +144,7 @@
                         <img src="{{ asset('images/a0.jpg ') }}" class="w-40 circle">
                     </div>
                     <div class="list-body">
-                        <a href="" class="_500">{{$group->secretaire->name}}</a>
+                        <a href="" class="_500">{{ $group->secretaire->name }}</a>
                     </div>
                 </div>
                 <div class="list-item">
@@ -157,7 +161,8 @@
                                                        class="col-sm-2 form-control-label">Anarana</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="comptableName"
-                                                           name="presidentName" value="{{$group->comptable->name}}"
+                                                           name="presidentName"
+                                                           value="{{ $group->comptable->name }}"
                                                            required/>
                                                 </div>
                                             </div>
@@ -184,7 +189,7 @@
                         <img src="{{ asset('images/a0.jpg ') }}" class="w-40 circle">
                     </div>
                     <div class="list-body">
-                        <a href="" class="_500">{{$group->comptable->name}}</a>
+                        <a href="" class="_500">{{ $group->comptable->name }}</a>
                     </div>
                 </div>
                 <div class="list-item">
@@ -201,7 +206,8 @@
                                                        class="col-sm-2 form-control-label">Anarana</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control" id="tresorierName"
-                                                           name="presidentName" value="{{$group->tresorier->name}}"
+                                                           name="presidentName"
+                                                           value="{{ $group->tresorier->name }}"
                                                            required/>
                                                 </div>
                                             </div>
@@ -229,7 +235,7 @@
                         <img src="{{ asset('images/a0.jpg ') }}" class="w-40 circle">
                     </div>
                     <div class="list-body">
-                        <a href="" class="_500">{{$group->tresorier->name}}</a>
+                        <a href="" class="_500">{{ $group->tresorier->name }}</a>
                     </div>
                 </div>
                 <div class="list-item">
@@ -243,42 +249,42 @@
                             </div>
                             <div class="list-body">
                                 <h6>{{ $conseiller->name }}</h6>
-                                    <div class="dropdown dropup pull-right">
-                                        <button class="btn btn-xs white btn-icon" data-toggle="dropdown"><i
-                                                    class="fa fa-pencil text-muted m-r-sm"></i></button>
-                                        <div class="dropdown-menu dropdown-menu-scale pull-right" style="width: 500px;">
-                                            <div class="dropdown-item">
-                                                <div class="box-body">
-                                                    <form action="" class="form-horizontal">
-                                                        <div class="form-group row">
-                                                            <label for="conseillerName"
-                                                                   class="col-sm-2 form-control-label">Anarana</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="text" class="form-control"
-                                                                       id="conseillerName"
-                                                                       name="conseillerName" required/>
-                                                            </div>
+                                <div class="dropdown dropup pull-right">
+                                    <button class="btn btn-xs white btn-icon" data-toggle="dropdown"><i
+                                                class="fa fa-pencil text-muted m-r-sm"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-scale pull-right" style="width: 500px;">
+                                        <div class="dropdown-item">
+                                            <div class="box-body">
+                                                <form action="" class="form-horizontal">
+                                                    <div class="form-group row">
+                                                        <label for="conseillerName"
+                                                               class="col-sm-2 form-control-label">Anarana</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="text" class="form-control"
+                                                                   id="conseillerName"
+                                                                   name="conseillerName" required/>
                                                         </div>
-                                                        <div class="form-group row">
-                                                            <label for="conseillerAvatar"
-                                                                   class="col-sm-2 form-control-label">Sary</label>
-                                                            <div class="col-sm-10">
-                                                                <input type="file" class="form-control-file"
-                                                                       name="conseillerAvatar"
-                                                                       placeholder="Aucun"/>
-                                                            </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label for="conseillerAvatar"
+                                                               class="col-sm-2 form-control-label">Sary</label>
+                                                        <div class="col-sm-10">
+                                                            <input type="file" class="form-control-file"
+                                                                   name="conseillerAvatar"
+                                                                   placeholder="Aucun"/>
                                                         </div>
-                                                        <div class="divider"></div>
-                                                        <div class="form-group row">
-                                                            <input type="submit" class="btn pull-right btn-sm amber-500"
-                                                                   style="color:rgba(255, 255, 255, 0.87);"
-                                                                   value="Modifier">
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                                    </div>
+                                                    <div class="divider"></div>
+                                                    <div class="form-group row">
+                                                        <input type="submit" class="btn pull-right btn-sm amber-500"
+                                                               style="color:rgba(255, 255, 255, 0.87);"
+                                                               value="Modifier">
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
@@ -293,6 +299,36 @@
 @section('js')
     @parent
     <script type="application/javascript">
+        $(function () {
+            var global = {};
+            global.forms = $('form');
+            global.handleSuccess = function (data) {
+                var _form = $(this);
+                var _shooter = this;
+                var _anchor = $($(_shooter).parentsUntil('list-item')[5]).find('[class="_500"]');
+                console.log(_anchor);
+                console.log(data.data.name);
+            }
 
+            global.handelError = function (error) {
+                console.warn(error);
+            }
+
+            $.each(global.forms, function (index, item) {
+//                $(item).on('submit', function (event) {
+//                    event.preventDefault();
+//                    var _url = $(item).attr('action');
+//                    var _formData = new FormData(item);
+//
+//                    axios.post(_url, _formData)
+//                            //.then(global.handleSuccess.bind(this))
+//                            .then(function(response) {
+//                                console.log(response);
+//                            })
+//                            .catch(global.handleError);
+//                });
+            });
+
+        });
     </script>
 @endsection

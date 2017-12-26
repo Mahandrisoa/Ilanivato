@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePresidentsTable extends Migration
 {
@@ -17,7 +17,8 @@ class CreatePresidentsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable(true);
             $table->integer('group_id',false, true);
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->string('avatar')->default('default.jpg');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
         });
     }
 

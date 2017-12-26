@@ -18,7 +18,7 @@
             <!--- END PROFIL BOX --->
 
             <!--- SIDEBAR RIGHT --->
-            @include('member::partials._sidebar_left')
+            {{--@include('member::partials._sidebar_left')--}}
             <!--- END SIDEBAR RIGHT --->
         </div>
 

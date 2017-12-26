@@ -2,9 +2,12 @@
 
 namespace Modules\Member\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-use Modules\Member\Http\Services\PostService;
+use Illuminate\Support\ServiceProvider;
+use Modules\Member\Entities\Post;
+use Modules\Member\Http\Services\Avatar\AvatarService;
+use Modules\Member\Http\Services\Post\PostService;
+use Modules\Member\Http\Services\President\PresidentService;
 
 class MemberServiceProvider extends ServiceProvider
 {
@@ -36,6 +39,12 @@ class MemberServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('Modules\Member\Http\Services\President\PresidentServiceInterface', function ($app) {
+            return new PresidentService(new AvatarService());
+        });
+        $this->app->bind('Modules\Member\Http\Services\Post\PostServiceInterface', function ($app) {
+            return new PostService(new Post());
+        });
     }
 
     /**

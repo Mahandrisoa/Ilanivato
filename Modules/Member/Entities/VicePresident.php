@@ -10,6 +10,8 @@ class VicePresident extends Model
 
     protected $table = 'vice_presidents';
 
+    public $timestamps = false;
+
     public function group()
     {
         return $this->belongsTo('App\Group');
