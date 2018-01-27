@@ -8,10 +8,10 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'home', 'namespace' =>
     Route::get('/', 'HomeController@index')->name('home');
 
     Route::resource('/histories','HistoryController');
-    Route::resource('/posts','PostController');
+//    Route::resource('/posts','PostController');
     Route::resource('/objectifs','ObjectifController');
     Route::resource('/bureaux','BureauController');
-
+    Route::resource('/calendars','CalendarController');
     /**
      * for the president
      */
@@ -22,5 +22,11 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'home', 'namespace' =>
     Route::put('/date_creation','CreationDateController@udpate');
 
     Route::resource('/fiainam-panahy', 'FiainamPanahyController');
+    Route::resource('/fiombonana', 'FiombonanaController');
+    Route::resource('/fitomboana', 'FitomboanaController');
+    Route::resource('/tafika-masina','TafikaMasinaController');
+    Route::resource('/maha-olona','MahaOlonaController');
+
+    Route::resource('/toriteny', 'ToritenyController');
 });
 

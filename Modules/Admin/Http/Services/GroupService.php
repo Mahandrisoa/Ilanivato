@@ -10,15 +10,24 @@ namespace Modules\Admin\Http\Services;
 
 use App\Group;
 use Illuminate\Support\Facades\File;
+use Modules\Member\Entities\Avatar;
 use Modules\Member\Entities\Comptable;
 use Modules\Member\Entities\President;
 use Modules\Member\Entities\Secretaire;
 use Modules\Member\Entities\Tresorier;
 use Modules\Member\Entities\VicePresident;
+use Modules\Member\Http\Services\Avatar\AvatarServiceInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class GroupService implements GroupServiceInterface
 {
+    protected $avatarService;
+
+    public function __construct(AvatarServiceInterface $avatarService)
+    {
+        $this->avatarService = $avatarService;
+    }
+
     public function getAll()
     {
         return $groups = Group::all();
@@ -28,7 +37,7 @@ class GroupService implements GroupServiceInterface
     {
         $group = new Group($inputs->all());
         $group->directoryName = $this->transform($group->name);
-        File::makeDirectory(public_path() . '/uploads/' . $group->directoryName, 0777, true, true);
+        $result = File::makeDirectory(public_path() . '/uploads/' . $group->directoryName, 0777, true, true);
         $group->save();
 
         // Create bureaux
@@ -37,7 +46,6 @@ class GroupService implements GroupServiceInterface
         $group->secretaire()->save(new Secretaire(['name' => '']));
         $group->comptable()->save(new Comptable(['name' => '']));
         $group->tresorier()->save(new Tresorier(['name' => '']));
-        $group->avatar()->save(new Avatar());
     }
 
     private function transform($str)

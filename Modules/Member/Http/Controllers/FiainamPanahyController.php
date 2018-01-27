@@ -16,20 +16,16 @@ class FiainamPanahyController extends Controller
 
     protected $nbrPerPage = 5;
 
-    
+    protected $typeId = [8,9];
 
     public function __construct(PostServiceInterface $postService)
     {
         $this->postService = $postService;
     }
 
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
     public function index()
     {
-        $posts = $this->postService->getPaginate($this->nbrPerPage);
+        $posts = $this->postService->getPaginate($this->nbrPerPage, $this->typeId);
         $links = $posts->setPath('')->render();
         return view('member::posts.fiainam-panahy.index', compact('posts','links'));
     }
@@ -59,9 +55,10 @@ class FiainamPanahyController extends Controller
      * Show the specified resource.
      * @return Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('member::show');
+        $post = $this->postService->getById($id);
+        return view('member::posts.fiainam-panahy.show', compact('post'));
     }
 
     /**

@@ -21,6 +21,8 @@ class CreatePostsTable extends Migration
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->integer('type_post_id', false, true);
             $table->foreign('type_post_id')->references('id')->on('type_posts')->onDelete('cascade');
+            $table->boolean('hasPosts')->default(false);
+            $table->boolean('isValid')->default(false);
             $table->timestamps();
         });
     }

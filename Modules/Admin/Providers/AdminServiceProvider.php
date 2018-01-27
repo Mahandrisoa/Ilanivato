@@ -5,6 +5,8 @@ namespace Modules\Admin\Providers;
 use Illuminate\Database\Eloquent\Factory;
 use Illuminate\Support\ServiceProvider;
 use Modules\Admin\Http\Services\GroupService;
+use Modules\Member\Http\Services\Avatar\AvatarService;
+use Modules\Member\Http\Services\Avatar\AvatarServiceInterface;
 
 class AdminServiceProvider extends ServiceProvider
 {
@@ -37,7 +39,7 @@ class AdminServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('Modules\Admin\Http\Services\GroupServiceInterface', function ($app) {
-            return new GroupService();
+            return new GroupService(new AvatarService());
         });
     }
 

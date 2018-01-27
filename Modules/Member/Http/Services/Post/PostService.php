@@ -16,6 +16,11 @@ class PostService implements PostServiceInterface
         $this->post = $post;
     }
 
+    public function getById($id)
+    {
+        return Post::find($id);
+    }
+
     public function store(Request $request)
     {
         $post = new Post($request->all());
@@ -23,9 +28,11 @@ class PostService implements PostServiceInterface
         $post->save();
     }
 
-    public function getPaginate($n)
+    public function getPaginate($n,$typeId)
     {
-        return Auth::user()->group->posts()->paginate($n);
+        $group = Auth::user()->group;
+        $posts = Post::where('group_id', $group->id )->whereIn('type_post_id' , $typeId);
+        return $posts->paginate($n);
     }
 
     

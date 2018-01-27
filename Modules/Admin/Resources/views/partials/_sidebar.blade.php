@@ -17,7 +17,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link block" href="">
+                <a class="nav-link block" href="{{ route('admin.posts.index') }}">
                     Publications
                 </a>
             </li>

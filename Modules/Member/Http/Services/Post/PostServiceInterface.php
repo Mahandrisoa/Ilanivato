@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 interface PostServiceInterface
 {
-    public function getPaginate($n);
+    public function getPaginate($n, $typeId);
 
     public function store(Request $request);
+    
 }

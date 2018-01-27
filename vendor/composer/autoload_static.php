@@ -279,18 +279,18 @@ class ComposerStaticInit9d3066b1d00392bc3c7a277c53c64837
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
-        'Doctrine\\Common\\Cache\\' =>
-            array(
-                0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
-            ),
-        'Doctrine\\Common\\Annotations\\' =>
-            array(
-                0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
-            ),
-        'Doctrine\\Common\\' =>
-            array(
-                0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
-            ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
+        'Doctrine\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -353,18 +353,18 @@ class ComposerStaticInit9d3066b1d00392bc3c7a277c53c64837
         ),
         'D' => 
         array (
-            'Doctrine\\DBAL\\' =>
-                array(
-                    0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
-                ),
+            'Doctrine\\DBAL\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/dbal/lib',
+            ),
             'Doctrine\\Common\\Lexer\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
             ),
-            'Doctrine\\Common\\Collections\\' =>
-                array(
-                    0 => __DIR__ . '/..' . '/doctrine/collections/lib',
-                ),
+            'Doctrine\\Common\\Collections\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/doctrine/collections/lib',
+            ),
         ),
     );
 
@@ -2354,6 +2354,7 @@ class ComposerStaticInit9d3066b1d00392bc3c7a277c53c64837
         'Modules\\Admin\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/AdminController.php',
         'Modules\\Admin\\Http\\Controllers\\GroupController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/GroupController.php',
         'Modules\\Admin\\Http\\Controllers\\PermissionController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/PermissionController.php',
+        'Modules\\Admin\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/PostController.php',
         'Modules\\Admin\\Http\\Controllers\\RoleController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/RoleController.php',
         'Modules\\Admin\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/Modules/Admin/Http/Controllers/UserController.php',
         'Modules\\Admin\\Http\\Repositories\\GroupRepository' => __DIR__ . '/../..' . '/Modules/Admin/Http/Repositories/GroupRepository.php',
@@ -2365,6 +2366,8 @@ class ComposerStaticInit9d3066b1d00392bc3c7a277c53c64837
         'Modules\\Admin\\Providers\\AdminServiceProvider' => __DIR__ . '/../..' . '/Modules/Admin/Providers/AdminServiceProvider.php',
         'Modules\\Member\\Database\\Seeders\\MemberDatabaseSeeder' => __DIR__ . '/../..' . '/Modules/Member/Database/Seeders/MemberDatabaseSeeder.php',
         'Modules\\Member\\Entities\\Avatar' => __DIR__ . '/../..' . '/Modules/Member/Entities/Avatar.php',
+        'Modules\\Member\\Entities\\Calendar' => __DIR__ . '/../..' . '/Modules/Member/Entities/Calendar.php',
+        'Modules\\Member\\Entities\\Comment' => __DIR__ . '/../..' . '/Modules/Member/Entities/Comment.php',
         'Modules\\Member\\Entities\\Comptable' => __DIR__ . '/../..' . '/Modules/Member/Entities/Comptable.php',
         'Modules\\Member\\Entities\\Conseiller' => __DIR__ . '/../..' . '/Modules/Member/Entities/Conseiller.php',
         'Modules\\Member\\Entities\\Historique' => __DIR__ . '/../..' . '/Modules/Member/Entities/Historique.php',
@@ -2372,20 +2375,33 @@ class ComposerStaticInit9d3066b1d00392bc3c7a277c53c64837
         'Modules\\Member\\Entities\\Post' => __DIR__ . '/../..' . '/Modules/Member/Entities/Post.php',
         'Modules\\Member\\Entities\\President' => __DIR__ . '/../..' . '/Modules/Member/Entities/President.php',
         'Modules\\Member\\Entities\\Secretaire' => __DIR__ . '/../..' . '/Modules/Member/Entities/Secretaire.php',
+        'Modules\\Member\\Entities\\Toriteny' => __DIR__ . '/../..' . '/Modules/Member/Entities/Toriteny.php',
         'Modules\\Member\\Entities\\Tresorier' => __DIR__ . '/../..' . '/Modules/Member/Entities/Tresorier.php',
+        'Modules\\Member\\Entities\\TypePost' => __DIR__ . '/../..' . '/Modules/Member/Entities/TypePost.php',
         'Modules\\Member\\Entities\\VicePresident' => __DIR__ . '/../..' . '/Modules/Member/Entities/VicePresident.php',
+        'Modules\\Member\\Http\\Controllers\\AbstractPostController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/AbstractPostController.php',
         'Modules\\Member\\Http\\Controllers\\BureauController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/BureauController.php',
+        'Modules\\Member\\Http\\Controllers\\CalendarController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/CalendarController.php',
         'Modules\\Member\\Http\\Controllers\\CreationDateController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/CreationDateController.php',
+        'Modules\\Member\\Http\\Controllers\\FiainamPanahyController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/FiainamPanahyController.php',
+        'Modules\\Member\\Http\\Controllers\\FiombonanaController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/FiombonanaController.php',
+        'Modules\\Member\\Http\\Controllers\\FitomboanaController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/FitomboanaController.php',
         'Modules\\Member\\Http\\Controllers\\HistoryController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/HistoryController.php',
         'Modules\\Member\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/HomeController.php',
+        'Modules\\Member\\Http\\Controllers\\MahaOlonaController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/MahaOlonaController.php',
         'Modules\\Member\\Http\\Controllers\\MemberController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/MemberController.php',
         'Modules\\Member\\Http\\Controllers\\ObjectifController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/ObjectifController.php',
         'Modules\\Member\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/PostController.php',
         'Modules\\Member\\Http\\Controllers\\PresidentController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/PresidentController.php',
+        'Modules\\Member\\Http\\Controllers\\TafikaMasinaController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/TafikaMasinaController.php',
+        'Modules\\Member\\Http\\Controllers\\ToritenyController' => __DIR__ . '/../..' . '/Modules/Member/Http/Controllers/ToritenyController.php',
+        'Modules\\Member\\Http\\Requests\\CreateCalendaerRequest' => __DIR__ . '/../..' . '/Modules/Member/Http/Requests/CreateCalendaerRequest.php',
         'Modules\\Member\\Http\\Requests\\CreatePostRequest' => __DIR__ . '/../..' . '/Modules/Member/Http/Requests/CreatePostRequest.php',
         'Modules\\Member\\Http\\Requests\\StoreHistoryRequest' => __DIR__ . '/../..' . '/Modules/Member/Http/Requests/StoreHistoryRequest.php',
         'Modules\\Member\\Http\\Services\\Avatar\\AvatarService' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/Avatar/AvatarService.php',
         'Modules\\Member\\Http\\Services\\Avatar\\AvatarServiceInterface' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/Avatar/AvatarServiceInterface.php',
+        'Modules\\Member\\Http\\Services\\Post\\PostService' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/Post/PostService.php',
+        'Modules\\Member\\Http\\Services\\Post\\PostServiceInterface' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/Post/PostServiceInterface.php',
         'Modules\\Member\\Http\\Services\\President\\PresidentService' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/President/PresidentService.php',
         'Modules\\Member\\Http\\Services\\President\\PresidentServiceInterface' => __DIR__ . '/../..' . '/Modules/Member/Http/Services/President/PresidentServiceInterface.php',
         'Modules\\Member\\Providers\\MemberServiceProvider' => __DIR__ . '/../..' . '/Modules/Member/Providers/MemberServiceProvider.php',

@@ -25,26 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="box">
-            {{ Form::open(array('route' => 'posts.store')) }}
-            <div>
-                <textarea name="content" class="form-control no-border" rows="3"
-                          placeholder="Vaovaon'ny Sampana (à publier) ..."></textarea>
-                <div class="box-footer clearfix">
-                    <button type="submit" class="btn pull-right btn-sm amber-500"
-                            style="color:rgba(255, 255, 255, 0.87);">Publier
-                    </button>
-                    <ul class="nav nav-pills nav-sm">
-                        <li class="nav-item"><a class="nav-link" href><i class="fa fa-book text-muted"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" href><i class="fa fa-camera text-muted"></i></a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href><i class="fa fa-video-camera text-muted"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            {{ Form::close() }}
-        </div>
         @foreach($posts as $post)
             <div class="box">
                 @if ($loop->first)

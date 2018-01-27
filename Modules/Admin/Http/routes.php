@@ -4,8 +4,6 @@ Route::group(['middleware' => [ 'web','auth', 'isAdmin'], 'prefix' => 'admin', '
     Route::get('/', 'AdminController@index');
     Route::resource('users', 'UserController');
     Route::resource('groups', 'GroupController');
-    /*
-    Route::resource('roles', 'RoleController');
-    Route::resource('permissions', 'PermissionController');
-    */
+    Route::get('posts','PostController@index')->name('admin.posts.index');
+    Route::post('posts/{post}', 'PostController@validate')->name('admin.posts.validate');
 });

@@ -15,18 +15,9 @@
                 <div class="panel box no-border m-b-xs">
                     <div class="box-header p-y-sm">
                         <span class="pull-right label text-sm">3214</span>
-                        <a data-toggle="collapse" data-parent="#accordion" data-target="#c_1" aria-expanded="false"
-                           class="collapsed">
+                        <a href="{{ route('fiainam-panahy.show',[ 'fiainam_panahy' => $post->id]) }}">
                             {{ $post->titre }}
                         </a>
-                    </div>
-                    <div id="c_1" class="collapse" aria-expanded="false" style="height: 0px;">
-                        <div class="box-body">
-                            <p class="text-sm text-muted"><span
-                                        class="text-md pull-left w-32 m-r rounded success">A</span>
-                                {{ $post->content }}
-                            </p>
-                        </div>
                     </div>
                 </div>
             @endforeach

@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title',Auth::user()->group->name)
-
+@section('css')
+    @parent
+@show
 @section('content')
     <div class="container-fluid">
         <!--- INTERLUDE --->

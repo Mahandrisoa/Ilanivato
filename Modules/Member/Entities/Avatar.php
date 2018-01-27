@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Avatar extends Model
 {
-    protected $fillable = [];
+    public $timestamps = false;
+
+    protected $fillable = ['avatarName','path','group_id'];
     
 }
