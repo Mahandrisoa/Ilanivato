@@ -3,7 +3,6 @@
 namespace Modules\Member\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Member\Entities\Historique;
@@ -11,59 +10,48 @@ use Modules\Member\Http\Requests\StoreHistoryRequest;
 
 class HistoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
     public function index()
     {
         $group =Auth::user()->group;
-        $events = $group->historiques;
-        return $events;
+        $histories = Historique::where('group_id', $group->id)->orderBy('date', 'asc')->paginate(10);
+        return view('member::historiques.index', compact('histories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
+    public function create()
+    {
+        return view('member::historiques.create');
+    }
+
     public function store(StoreHistoryRequest $request)
     {
+        $str = str_replace('/', '-', $request->get('date'));
+        $date = new \DateTime($str);
         $history = new Historique($request->all());
+        $history->date = $date;
         $history->group_id = Auth::user()->group->id;
         $history->save();
-        return response()->json($history,201);
+        return redirect()->route('histories.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
     public function edit($id)
     {
         $history = Historique::find($id);
-        return response()->json($history);
+        return view('member::historiques.edit', compact('history'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
     public function update(Request $request,Historique $history)
     {
+        $str = str_replace('/', '-', $request->get('date'));
+        $date = new \DateTime($str);
         $history->fill($request->all());
+        $history->date = $date;
         $history->save();
-        return response()->json($history,200);
+        return redirect()->route('histories.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
     public function destroy(Historique $history)
     {
         $history->delete();
-        return response()->json(null,204);
+        return redirect()->route('histories.index');
     }
 }

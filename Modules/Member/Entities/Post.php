@@ -8,8 +8,6 @@ class Post extends Model
 {
     protected $fillable = ['content', 'group_id', 'type_post_id', 'titre','hasPosts','isValid'];
 
-    public $timestamps = false;
-
     public function group()
     {
         return $this->belongsTo('App\Group');

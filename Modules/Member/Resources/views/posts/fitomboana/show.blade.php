@@ -1,7 +1,7 @@
 @extends('member::layouts.master')
 @section('section_center')
-    <div class="col-sm-12 push-md-3 col-md-6">
-        <div class="margin">
+    <div class="box">
+        <div class="box-header">
             <h5 class="m-b-0 _300">Fitomboana
                 <div class="btn-group pull-right">
                     <a href="{{ route('fitomboana.create') }}">
@@ -12,7 +12,7 @@
         </div>
         <div class="panel box no-border m-b-xs">
             <div class="box-header p-y-sm">
-                <span class="pull-right label text-sm">3214</span>
+                <span class="pull-right label text-sm">x</span>
                 <a data-toggle="collapse" data-parent="#accordion" data-target="#c_1">
                     {{ $post->titre }}
                 </a>

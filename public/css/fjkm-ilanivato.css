@@ -6,40 +6,46 @@
     height: 100%;
 }
 
-footer, .app-nav, .app-body {
-    padding-left: 120px;
-    padding-right: 120px;
+.app-nav {
+    padding-left: 50px;
+    padding-right: 50px;
     margin-left: auto;
-}
-header {
-    margin-left: auto;
+    background-color: #D4D1C8;
 }
 
 header {
-    border-bottom: 10px solid white;
+    border-bottom: 10px solid #E9C35E;
     box-shadow: 0px 2px 2px #888888;
     height: 322px;
     background-color: #968F7D;
 }
+
 header .news {
     height: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     position: relative;
-    top: -50px;
+    top: -48px;
     padding: 0px;
     margin: 0px;
 }
 
 header .news > ul {
-    display: flex;
-}
-header .news > ul >li {
-    flex:1;
-    width : 25%;
+    padding: 0px;
+    width: 100%;
     list-style-type: none;
-    font-size: 1.3em;
+    overflow: hidden;
+    height: 48px;
 }
-header .banner{
+
+header .news > ul > li {
+    width: 25%;
+    list-style-type: none;
+    font-size: 1.2em;
+    float: left;
+    text-align: center;
+}
+
+header .banner {
     background-image: url('../images/cropped.jpg');
 }
 
@@ -49,58 +55,117 @@ header .banner > a:first-child {
 }
 
 header .banner .titre {
-    font-size:4.5em;
+    font-size: 4.5em;
     text-align: center;
-    width : inherit;
-    padding-top : 50px;
-    padding-left : 0px;
-    margin:0;
+    width: inherit;
+    padding-top: 50px;
+    padding-left: 0px;
+    margin: 0;
 }
+
 header .banner .sous-titre {
-    font-size:2em;
+    font-size: 2em;
     padding-left: 250px;
 }
+
 header img {
     position: absolute;
-    top :0px;
+    top: 0px;
 }
+
 .navbar-brand {
     background-color: #95907A;
 }
-#bs-navbar > ul > li > a{
+
+#bs-navbar > ul > li > a {
+    color: #fff;
+    font-size: 1.3em;
+}
+
+#bs-navbar > ul > li > .dropdown-menu {
+    position: relative;
+}
+
+#bs-navbar > ul > li > a:hover {
+    background-color: #d59e2d;
     color: #fff;
 }
 
-#bs-navbar > ul > li > a:hover{
-    background-color:#d59e2d;
-    color: #fff;
-}
 #bs-navbar > ul > li > a:active {
-    background-color:#d59e2d;
+    background-color: #d59e2d;
 }
+
 #bs-navbar > ul > li > a:only-child {
+    border-top: solid 1px #d59e2d;
     border-right: solid 1px #d59e2d;
 }
+
 #bs-navbar {
     background-color: #ECC25E;
-    padding-left:0px;
+    padding-left: 0px;
     position: relative;
-
 }
+
+/**
+    div item shown on navbar-list anchor hovered
+**/
+.drop-content {
+    position: absolute;
+    z-index: 1;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.drop-content > .row {
+    background-color: #d59e2d;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-left-color: #fff;
+    border-right-color: #fff;
+}
+
+.drop-content > .title {
+    font-weight: bold;
+    font-family: Oswald, Arial, sans-serif;
+}
+
+.drop-content > .row > div {
+    padding-bottom: 20px;
+    min-height: 175px;
+}
+
+.drop-content > .row > div > .title {
+    color: #4b4b4b;
+}
+
+.drop-content > .row > div > .content {
+    padding-top: 10px;
+}
+
+.drop-content > .row > div > .content > ul {
+    padding-left: 15px;
+}
+
+.drop-content > .row > div > .content > ul > li {
+    list-style-type: none;
+}
+
+.drop-content > .row > div > .content > ul > li > a {
+    color: #f4f8fa;
+}
+
+/**
+   end div item shown on navbar-list anchor hovered
+**/
 footer {
     background-color: #968F7D;
     padding-top: 20px;
     width: auto;
 }
 
-.app-nav {
-    background-color: #D4D1C8;
-}
-
 .app-body {
     padding-top: 30px;
     padding-bottom: 30px;
-    width: auto;
     border-bottom: 10px solid #EDC357;
     background-color: #D4D1C8;
     color: #5e5d5d;
@@ -109,6 +174,7 @@ footer {
 
 .edito {
     border-left: 2px solid #C7C2BC;
+    padding-right: 0px;
 }
 
 .t-box {
@@ -154,9 +220,9 @@ footer {
     margin-bottom: 20px;
 }
 
-.footer-box .footer-box-body .btn-yellow:hover{
+.footer-box .footer-box-body .btn-yellow:hover {
     color: #fff;
-    background-color:#d59e2d;
+    background-color: #d59e2d;
 }
 
 .footer-box-line {
@@ -187,4 +253,24 @@ footer {
 
 .nav > li > a:hover {
     background-color: #ef7f0b00;
+}
+
+.active > span {
+    color: white !important;
+    background-color: #ffd54f !important;
+    border-color: #ffd54f !important;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0px;
+}
+
+.pagination > li > span,
+.pagination > li > a {
+    color: #968F7C !important;
+    font-weight: bold;
 }

@@ -18,18 +18,24 @@
             {{ Form::open(array('route' => array('groups.store'))) }}
             <div class="form-group row">
                 {{ Form::label('name', 'Anarana fikambanana na Sampana',['class'=>'col-sm-2 form-control-label' ]) }}
-                <div class="col-sm-8 pull-right">
+                <div class="col-sm-10 pull-right">
                     {{ Form::text('name', '', array('class' => 'form-control','placeholder' => 'Anarana','required' => true)) }}
                 </div>
             </div>
             <div class="form-group row">
+                {{ Form::label('name', 'Toriteny',['class'=>'col-sm-2 form-control-label' ]) }}
+                <div class="col-sm-10 pull-left">
+                    {{ Form::checkbox('hasToriteny',true ,true) }}
+                </div>
+            </div>
+            <div class="form-group row">
                 {{ Form::label('interlude', 'Teny faneva',['class'=>'col-sm-2 form-control-label' ]) }}
-                <div class="col-sm-8 pull-right">
+                <div class="col-sm-10 pull-right">
                     {{ Form::textarea('interlude', null , array('class' => 'form-control','placeholder' => 'Teny faneva','required' => false)) }}
                 </div>
             </div>
             <div class="form-group row">
-                <div class="col-sm-8 pull-right">
+                <div class="col-sm-10 pull-right">
                     {{ Form::submit('Ajouter', array('class' => 'btn primary btn-md')) }}
                 </div>
             </div>

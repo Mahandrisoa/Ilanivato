@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Toriteny extends Model
 {
-    protected $fillable = ['date','author','content','group_id'];
+    protected $fillable = ['date', 'author', 'content', 'group_id', 'id'];
     
     protected $table = 'toriteny';
 }

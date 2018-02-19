@@ -1,8 +1,8 @@
 @extends('member::layouts.master')
 
 @section('section_center')
-    <div class="col-sm-12 push-md-3 col-md-6">
-        <div class="list box">
+
+    <div class="list box">
             <div class="box-header b-b">
                 <h3>IREO MPIANDRAIKITRA NY SAMPANA</h3>
             </div>
@@ -294,7 +294,6 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
 @section('js')
     @parent

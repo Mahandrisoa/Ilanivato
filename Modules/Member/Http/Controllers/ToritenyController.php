@@ -3,7 +3,6 @@
 namespace Modules\Member\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Member\Entities\Toriteny;
@@ -29,7 +28,7 @@ class ToritenyController extends Controller
         $toriteny = new Toriteny($request->all());
         $toriteny->date = $date;
         $toriteny->save();
-        return redirect()->route('toriteny.index');
+        return redirect()->route('toriteny-member.index');
     }
 
     function formatDate($date)
@@ -37,13 +36,15 @@ class ToritenyController extends Controller
         return str_replace('/', '-', $date);
     }
 
-    public function show(Toriteny $toriteny)
+    public function show($id)
     {
+        $toriteny = Toriteny::find($id);
         return view('member::toriteny.show',compact('toriteny'));
     }
 
-    public function edit(Toriteny $toriteny)
+    public function edit($id)
     {
+        $toriteny = Toriteny::find($id);
         return view('member::toriteny.edit', compact('toriteny'));
     }
 
@@ -53,12 +54,12 @@ class ToritenyController extends Controller
         $toriteny->fill($request->all());
         $toriteny->date = new \DateTime($dateInput);
         $toriteny->save();
-        return redirect()->route('toriteny.index');
+        return redirect()->route('toriteny-member.index');
     }
 
     public function destroy(Toriteny $toriteny)
     {
         $toriteny->delete();
-        return redirect()->route('toriteny.index');
+        return redirect()->route('toriteny-member.index');
     }
 }

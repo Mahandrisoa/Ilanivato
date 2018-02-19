@@ -17,8 +17,7 @@
           type="text/css"/>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" type="text/css"/>
     <link rel="stylesheet" href="{{ asset('css/fjkm-ilanivato.css') }}" type="text/css"/>
-    @section('css')
-    @endsection
+    @yield('css')
 </head>
 <body>
 <a id="skippy" class="sr-only sr-only-focusable" href="#content">
@@ -32,7 +31,8 @@
     </div>
     <img src="{{ asset('images/fjkm.png') }}" alt="Fjkm">
     <div class="news">
-        @yield('news')
+        <ul>
+        </ul>
     </div>
 </header>
 <div class="app-nav">
@@ -41,29 +41,170 @@
             <li>
                 <a href="{{route('pejy-voalohany')}}" class="navbar-brand text-yellow">PEJY VOALOHANY</a>
             </li>
-            <li>
-                <a href="{{route('fg-lehibe')}}">FIANGONANA LEHIBE</a>
+            <li class="dropdown">
+                <a href="{{route('fg-lehibe')}}" id="fg-lehibe" data-toggle="dropdown">FIANGONANA LEHIBE</a>
             </li>
             <li class="active">
-                <a href="{{route('fg-mitory')}}">FIANGONANA MITORY</a>
+                <a href="{{route('fg-mitory')}}" id="fg-mitory">FIANGONANA MITORY</a>
+            </li>
+            <li>
+                <a href="{{route('fg-about')}}" id="zadi">AKANY ZADI</a>
+            </li>
+            <li>
+                <a href="{{route('fg-ssaf')}}" id="ssaf">SSAF</a>
             </li>
             <li>
                 <a href="{{route('fg-about')}}">MOMBA NY FIANGONANA</a>
             </li>
-            <li>
-                <a href="{{route('fg-ssaf')}}">SSAF</a>
-            </li>
         </ul>
         {{--<ul class="nav navbar-nav navbar-right">--}}
-            {{--<li><a href="{{route('fg-blog')}}">Blog</a></li>--}}
+        {{--<li><a href="{{route('fg-blog')}}">Blog</a></li>--}}
         {{--</ul>--}}
     </nav>
 </div>
-<section class="app-body">
-    @yield('content')
+<div class="w-full drop-content hidden">
+    <div class="row">
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <h4>
+                FIANGONANA LEHIBE
+            </h4>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>FIAINAM-PANAHY</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="{{ route('fahateraham-baovao') }}">Fahateraham-baovao</a></li>
+                    <li><a href="{{ route('velona-sy-miaina') }}">Fiainam-panahy velona sy miaina</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>FITOMBOANA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="{{ route('soratra-masina') }}">Soratra Masina</a></li>
+                    <li><a href="{{ route('fiainam-bavaka') }}">Fiainam-bavaka</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>FIOMBONANA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="{{ route('miaraka') }}">Miaraka</a></li>
+                    <li><a href="{{ route('mifampiresaka') }}">Mifampiresaka</a></li>
+                    <li><a href="{{ route('mifankahita') }}">Mifankahita</a></li>
+                    <li><a href="{{ route('mifanampy') }}">Mifanampy</a></li>
+                    <li><a href="{{ route('miara-miasa') }}">Miara-miasa</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full drop-content hidden">
+    <div class="row">
+        <div class="col-md-4 h-full" style="border-left: 2px solid #C7C2BC;">
+            <h4>
+                FIANGONANA MITORY
+            </h4>
+        </div>
+        <div class="col-md-4 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>TAFIKA MASINA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="{{ route('fiofanana') }}">Fiofanana</a></li>
+                    <li><a href="{{ route('fanatanterahana') }}">Fanatanterahana</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>FIHEVERANA NY MAHA OLONA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="{{ route('asa-sosialy') }}">Asa sosialy</a></li>
+                    <li><a href="{{ route('asa-vavolombelona') }}">Asa vavolombelona</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full drop-content hidden">
+    <div class="row">
+        <div class="col-md-4 h-full">
+            <div class="title">
+                <h5>AKANY ZANA-DILOILO</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="w-full drop-content hidden">
+    <div class="row">
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <h4>
+                SAMPANA sy SAMPANA'ASA ary FIKAMBANANA
+            </h4>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>SAMPANA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="">Sekoly alahady</a></li>
+                    <li><a href="">Lehilahy Kristianina</a></li>
+                    <li><a href="">Tanora Kristianina</a></li>
+                    <li><a href="">Vokovoko manga</a></li>
+                    <li><a href="">Vondrona Fototra Laika</a></li>
+                    <li><a href="">Mpanazava sy Tily</a></li>
+                    <li><a href="">Dorkasy</a></li>
+                    <li><a href="">Fifohazana</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>SAMPANAN'ASA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="">SEKOLY</a></li>
+                    <li><a href="">Asa Lazara</a></li>
+                    <li><a href="">Asa Fitoriana ny Filazantsara</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
+            <div class="title">
+                <h5>FIKAMBANANA</h5>
+            </div>
+            <div class="content">
+                <ul>
+                    <li><a href="">Fahatanjahantena</a></li>
+                    <li><a href="">Diakona sy Loholona</a></li>
+                    <li><a href="">GAFLI</a></li>
+                    <li><a href="">Mpitoriteny sy Katekista</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="app-body ">
+    <div class="container">
+        @yield('content')
+    </div>
 </section>
 <footer class="" role="contentinfo">
-    <div class="">
+    <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <div class="panel footer-box no-border">
@@ -135,9 +276,115 @@
     </div>
 </footer>
 
-@section('js')
-    <script src="{{ asset('js/laroute.js') }}"></script>
-    <script src="{{ asset('') }}"></script>
-@endsection
+
+<script type="text/javascript" src="{{ asset('js/laroute.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bootstrap/js/jquery.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script>
+    $(function () {
+        var drops = $('.drop-content');
+
+        drops.mouseleave(function () {
+            $(this).addClass('hidden');
+        });
+        /**
+         *  fgLehibe
+         * */
+        $('#fg-lehibe').mouseover(function (e) {
+            $(drops[0]).removeClass('hidden');
+        });
+        $('#fg-lehibe').mouseleave(function (e) {
+            if (!$(e.relatedTarget).parents().hasClass('drop-content')) {
+                $(drops[0]).addClass('hidden');
+            }
+        });
+
+        /**
+         * fgMitory
+         */
+        $('#fg-mitory').mouseover(function (e) {
+            $(drops[1]).removeClass('hidden');
+        });
+        $('#fg-mitory').mouseleave(function (e) {
+            if (!$(e.relatedTarget).parents().hasClass('drop-content')) {
+                $(drops[1]).addClass('hidden');
+            }
+        });
+        /**
+         * zadi
+         */
+        $('#zadi').mouseover(function (e) {
+            $(drops[2]).removeClass('hidden');
+        });
+        $('#zadi').mouseleave(function (e) {
+            if (!$(e.relatedTarget).parents().hasClass('drop-content')) {
+                $(drops[2]).addClass('hidden');
+            }
+        });
+        /**
+         * ssaf
+         */
+        $('#ssaf').mouseover(function (e) {
+            $(drops[3]).removeClass('hidden');
+        });
+        $('#ssaf').mouseleave(function (e) {
+            if (!$(e.relatedTarget).parents().hasClass('drop-content')) {
+                $(drops[3]).addClass('hidden');
+            }
+        });
+
+        /**
+         * Calendars
+         */
+        var calendars = [];
+        var options = {
+            url: "/calendars"
+        }
+        var begin = 0;
+        var end = 4;
+        var news = '.news>ul';
+        $.ajax(options)
+                .success(function (response) {
+                    calendars = response;
+                    var temp = slice(calendars);
+                    render(temp, news);
+                })
+                .error(function (err) {
+                    console.warn(err);
+                });
+
+        setInterval(function () {
+            var temp = slice(calendars);
+            render(temp, news);
+        }, 10000);
+
+        function slice(tab) {
+            var temp = tab.slice(begin, end);
+            if (tab.slice(begin, end).length == 0) {
+                temp = tab.slice(end);
+                begin = 0;
+                end = 4;
+            } else {
+                begin = end;
+            }
+            return temp;
+        }
+
+        function render(data, target) {
+            var content = '';
+            $.each(data, function (index, obj) {
+                content += '' +
+                        '<li class="animated fadeInRightBig">' +
+                        '<div class="text-yellow">' + obj.date +
+                        '</div>' +
+                        '<div class="light">' + obj.event +
+                        '</div>' +
+                        '</li>';
+            });
+            $(target).html(content);
+        }
+    });
+</script>
+@yield('js')
 </body>
 </html>

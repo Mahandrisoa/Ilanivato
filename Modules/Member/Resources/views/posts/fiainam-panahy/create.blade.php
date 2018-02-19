@@ -1,6 +1,5 @@
 @extends('member::layouts.master')
 @section('section_center')
-    <div class="col-sm-12 push-md-3 col-md-9">
         <div class="row-col box">
             <div class="box-header">
                 <h5 class="m-b-0 _300">
@@ -30,5 +29,4 @@
                 {{ Form::close() }}
             </div>
         </div>
-    </div>
 @endsection

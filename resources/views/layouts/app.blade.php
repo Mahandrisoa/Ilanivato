@@ -52,8 +52,10 @@
     <!-- Scripts -->
     @section('js')
         <script src="{{ asset('js/laroute.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
-        <script src="{{ asset('js/historique-app.js') }}"></script>
+        <script src="{{ asset('assets/jquery/dist/jquery.js') }}"></script>
+        <script src="{{ asset('assets/tether/dist/js/tether.min.js') }}"></script>
+        <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('assets/scripts/ui-nav.js') }}"></script>
     @show
 </body>
 </html>

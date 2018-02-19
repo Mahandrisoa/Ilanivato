@@ -61,6 +61,7 @@
                     <small class="text-muted inline m-t-sm m-b-sm">Listant x-y sur z responsables</small>
                 </div>
                 <div class="col-sm-4 text-right text-center-xs">
+                    {{ $users->links() }}
                     <ul class="pagination pagination-sm m-a-0">
                         <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
                         <li class="active"><a href="">1</a></li>

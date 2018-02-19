@@ -27,6 +27,6 @@ Route::group(['middleware' => ['web','auth'], 'prefix' => 'home', 'namespace' =>
     Route::resource('/tafika-masina','TafikaMasinaController');
     Route::resource('/maha-olona','MahaOlonaController');
 
-    Route::resource('/toriteny', 'ToritenyController');
+    Route::resource('/toriteny-member', 'ToritenyController');
 });
 

@@ -7,21 +7,19 @@
 @section('content')
     <div class="container-fluid">
         <!--- INTERLUDE --->
-        @include('member::partials._interlude')
-        <!--- END INTERLUDE --->
+        {{--@include('member::partials._interlude')--}}
+                <!--- END INTERLUDE --->
 
         <div class="row">
-            <!--- SECTION CENTER --->
-            @yield('section_center')
-            <!--- END SECTION CENTER --->
-
             <!--- PROFIL BOX --->
-            @include('member::partials._profil_box')
-            <!--- END PROFIL BOX --->
-
-            <!--- SIDEBAR RIGHT --->
-            {{--@include('member::partials._sidebar_left')--}}
-            <!--- END SIDEBAR RIGHT --->
+            <div class="col-sm-12 col-md-3">
+                @include('member::partials._profil_box')
+            </div>
+            <div class="col-sm-12 col-md-6">
+                @yield('section_center')
+            </div>
+            <!--- END SECTION CENTER --->
+            @include('member::partials._sidebar_left')
         </div>
 
     </div>

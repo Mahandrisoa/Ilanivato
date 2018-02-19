@@ -2,31 +2,6 @@
 @section('section_center')
     <div class="col-sm-12 push-md-3 col-md-6">
         <div class="box">
-            <div class="box-header b-b">
-                <h3>Vaovao samihafan'ny Sampana, Sampan'Asa ary Fikambanana</h3>
-            </div>
-            <div class="box-body">
-                <div class="row row-sm">
-                    <div class="col-xs-4">
-                        <a href>
-                            <img src="{{ asset('images/c6.jpg') }}" class="w-full"/>
-                        </a>
-                    </div>
-                    <div class="col-xs-4">
-                        <a href>
-                            <img src="{{ asset('images/c4.jpg') }}" class="w-full"/>
-                        </a>
-                    </div>
-                    <div class="col-xs-4">
-                        <a href>
-                            <img src="{{ asset('images/c5.jpg') }}" class="w-full"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="box">
             <div class="box-header">
                 <h3>TANJON'NY :
                     @if(Auth::user()->isAdmin())
