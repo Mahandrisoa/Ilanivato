@@ -173,7 +173,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
@@ -183,6 +183,11 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Lord\Laroute\LarouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+
+        /**
+         * Eloquent-image-mutator
+         */
+        SahusoftCom\EloquentImageMutator\EloquentImageMutatorProvider::class,
     ],
 
     /*

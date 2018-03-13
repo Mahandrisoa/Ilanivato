@@ -15,7 +15,18 @@
                 @foreach($posts as $post)
                     <div class="panel box no-border m-b-xs">
                         <div class="box-header p-y-sm">
-                            <span class="pull-right label text-sm">x</span>
+                            <div class="pull-right">
+                                <div style="display: inline-flex;padding-top: 0">
+                                    <a href="{{ route('fiombonana.edit',['fiombonana'=> $post]) }}"
+                                       class="btn btn-xs white btn-icon"><i class="fa fa-pencil"></i>
+                                    </a>
+                                    {!! Form::open(['route'=> ['fiombonana.destroy', $post], 'method' => 'DELETE']) !!}
+                                    <button type="submit" class="btn btn-icon btn-xs">
+                                        <i class="fa fa-remove"></i>
+                                    </button>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
                             <a href="{{ route('fiombonana.show',[ 'fiombonana' => $post->id]) }}">
                                 {{ $post->titre }}
                             </a>

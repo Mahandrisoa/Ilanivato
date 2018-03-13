@@ -2,9 +2,14 @@
 
 namespace Modules\Member\Http\Controllers;
 
+use App\Events\PostSent;
+use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Event;
+use Mockery\CountValidator\Exception;
 use Modules\Member\Entities\Post;
 use Modules\Member\Entities\TypePost;
 use Modules\Member\Http\Requests\CreatePostRequest;
@@ -16,7 +21,7 @@ class FiainamPanahyController extends Controller
 
     protected $nbrPerPage = 5;
 
-    protected $typeId = [8,9];
+    protected $typeId = [8, 9];
 
     public function __construct(PostServiceInterface $postService)
     {
@@ -27,63 +32,51 @@ class FiainamPanahyController extends Controller
     {
         $posts = $this->postService->getPaginate($this->nbrPerPage, $this->typeId);
         $links = $posts->setPath('')->render();
-        return view('member::posts.fiainam-panahy.index', compact('posts','links'));
+//        $group = Auth::user()->group;
+//        try {
+//            broadcast(new PostSent($group));
+//        } catch (Exception $e) {
+//
+//        }
+//        Event::fire(new PostSent($group));
+        return view('member::posts.fiainam-panahy.index', compact('posts', 'links'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
+    public function edit($id)
+    {
+        $post = Post::find($id);
+        $types = TypePost::all()->where('type_post_id', '=', 3)->pluck('libelleType', 'id')->toArray();
+        return view('member::posts.fiainam-panahy.edit', compact('post', 'types'));
+    }
+
     public function create()
     {
-        $types = TypePost::all()->where('type_post_id', '=', 3)->pluck('libelleType','id')->toArray();
+        $types = TypePost::all()->where('type_post_id', '=', 3)->pluck('libelleType', 'id')->toArray();
         return view('member::posts.fiainam-panahy.create', array('types' => $types));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
     public function store(CreatePostRequest $request)
     {
         $this->postService->store($request);
         return redirect()->route('fiainam-panahy.index');
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
     public function show($id)
     {
         $post = $this->postService->getById($id);
         return view('member::posts.fiainam-panahy.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
+    public function update(Request $request, $id)
     {
-        return view('member::edit');
+        $post = Post::find($id);
+        $this->postService->update($request, $post);
+        return redirect()->route('fiainam-panahy.index');
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
-    public function update(Request $request)
+    public function destroy($id)
     {
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
-    public function destroy()
-    {
+        $this->postService->delete($id);
+        return redirect()->route('fiainam-panahy.index');
     }
 }

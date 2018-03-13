@@ -5,6 +5,7 @@ namespace Modules\Member\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Member\Entities\Post;
 use Modules\Member\Entities\TypePost;
 use Modules\Member\Http\Services\Post\PostServiceInterface;
 
@@ -14,7 +15,7 @@ class FitomboanaController extends Controller
 
     protected $nbrPerPage = 5;
 
-    protected $typeId = [10,11];
+    protected $typeId = [10, 11];
 
     public function __construct(PostServiceInterface $postService)
     {
@@ -25,12 +26,12 @@ class FitomboanaController extends Controller
     {
         $posts = $this->postService->getPaginate($this->nbrPerPage, $this->typeId);
         $links = $posts->setPath('')->render();
-        return view('member::posts.fitomboana.index', compact('posts','links'));
+        return view('member::posts.fitomboana.index', compact('posts', 'links'));
     }
 
     public function create()
     {
-        $types = TypePost::all()->where('type_post_id', '=', 4)->pluck('libelleType','id')->toArray();
+        $types = TypePost::all()->where('type_post_id', '=', 4)->pluck('libelleType', 'id')->toArray();
         return view('member::posts.fitomboana.create', array('types' => $types));
     }
 
@@ -43,32 +44,26 @@ class FitomboanaController extends Controller
     public function show($id)
     {
         $post = $this->postService->getById($id);
-        return view('member::posts.fitomboana.show',compact('post'));
+        return view('member::posts.fitomboana.show', compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
+    public function edit($id)
     {
-        return view('member::edit');
+        $post = Post::find($id);
+        $types = TypePost::all()->where('type_post_id', '=', 4)->pluck('libelleType', 'id')->toArray();
+        return view('member::posts.fitomboana.edit', compact('post', 'types'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
+        $post = Post::find($id);
+        $this->postService->update($request, $post);
+        return redirect()->route('fitomboana.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
-    public function destroy()
+    public function destroy($id)
     {
+        $this->postService->delete($id);
+        return redirect()->route('fitomboana.index');
     }
 }

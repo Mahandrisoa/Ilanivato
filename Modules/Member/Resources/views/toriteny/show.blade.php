@@ -25,6 +25,10 @@
                         <p class="">{{ $toriteny->author }}</p>
                     </div>
                 </div>
+                <audio controls="controls" preload class="w-full">
+                    <source src="{{ asset('audio/toriteny/'. $toriteny->audio) }}" type="audio/mpeg">
+                    Votre navigateur ne supporte pas l'intégration du lecteur.
+                </audio>
             </div>
         </div>
     </div>

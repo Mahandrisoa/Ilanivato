@@ -16,7 +16,7 @@
                 <span class="hidden-folded inline">{{ Auth::user()->group->name }}</span>
                 @else
                     <span class="hidden-folded inline">FJKM Ilanivato Misionera</span>
-                @endauth
+                    @endauth
             </a>
             <!-- / brand -->
             <!-- navbar collapse -->
@@ -28,6 +28,19 @@
                         <a class="nav-link" href="{{ route('login') }}"><span class="nav-text">Se connecter</span></a>
                     </li>
                     @else
+                        {{--<li class="nav-item dropdown pos-stc-xs">--}}
+                            {{--<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-expanded="false">--}}
+                                {{--<i class="material-icons"></i>--}}
+                                {{--<span class="label label-sm up warn">3</span>--}}
+                            {{--</a>--}}
+                            {{--<div class="dropdown-menu dropdown-menu-scale pull-right">--}}
+                                {{--<a href="" class="dropdown-item">--}}
+                                    {{--<span>Le groupe x vient de poster une nouvelle information</span>--}}
+                                {{--</a>--}}
+                                {{--<a href="" class="dropdown-item">notification1</a>--}}
+                                {{--<a href="" class="dropdown-item">notification1</a>--}}
+                            {{--</div>--}}
+                        {{--</li>--}}
                         <li class="nav-item inline dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                 <span class="nav-text">{{ Auth::user()->name }}</span>

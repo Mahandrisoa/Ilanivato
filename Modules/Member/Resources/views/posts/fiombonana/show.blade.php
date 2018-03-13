@@ -12,14 +12,13 @@
         </div>
         <div class="panel box no-border m-b-xs">
             <div class="box-header p-y-sm">
-                <span class="pull-right label text-sm">3214</span>
                 <a data-toggle="collapse" data-parent="#accordion" data-target="#c_1">
                     {{ $post->titre }}
                 </a>
             </div>
             <div id="c_1" class="collapse in">
                 <div class="box-body">
-                    <p class="text-sm text-muted"><span class="text-md pull-left w-32 m-r rounded success">A</span>
+                    <p class="text-sm text-muted">
                         {{ $post->content }}
                     </p>
                 </div>

@@ -26,17 +26,17 @@ class CreationDateController extends Controller
      */
     public function store(Request $request)
     {
-        $group = Auth::user()->group();
+        $group = Auth::user()->group;
         $group->date_creation = $request->get('date_creation');
         $group->save();
-        return response()->json($group->date_creation, 201);
+        return redirect()->route('histories.index');
     }
 
-    public function update(Request $request)
+    public function udpate(Request $request)
     {
-        $group = Auth::user()->group();
+        $group = Auth::user()->group;
         $group->date_creation = $request->get('date_creation');
         $group->save();
-        return response()->json($group->date_creation, 200);
+        return redirect()->route('histories.index');
     }
 }

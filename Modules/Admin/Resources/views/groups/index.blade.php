@@ -22,9 +22,9 @@
             <div class="col-sm-4">
             </div>
             <div class="col-sm-3">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" placeholder="Rechercher..">
-                </div>
+                {{--<div class="input-group input-group-sm">--}}
+                    {{--<input type="text" class="form-control" placeholder="Rechercher..">--}}
+                {{--</div>--}}
             </div>
         </div>
         <div class="table-responsive">
@@ -61,22 +61,22 @@
         </div>
         <footer class="dker p-a">
             <div class="row">
-                <div class="col-sm-4 hidden-xs">
-                </div>
-                <div class="col-sm-4 text-center">
-                    <small class="text-muted inline m-t-sm m-b-sm">Listant x-y sur z Sampana,Sampan'Asa,Fikambanana</small>
-                </div>
-                <div class="col-sm-4 text-right text-center-xs">
-                    <ul class="pagination pagination-sm m-a-0">
-                        <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
-                        <li><a href="">5</a></li>
-                        <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
-                    </ul>
-                </div>
+                {{--<div class="col-sm-4 hidden-xs">--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-4 text-center">--}}
+                    {{--<small class="text-muted inline m-t-sm m-b-sm">Listant x-y sur z Sampana,Sampan'Asa,Fikambanana</small>--}}
+                {{--</div>--}}
+                {{--<div class="col-sm-4 text-right text-center-xs">--}}
+                    {{--<ul class="pagination pagination-sm m-a-0">--}}
+                        {{--<li><a href=""><i class="fa fa-chevron-left"></i></a></li>--}}
+                        {{--<li class="active"><a href="">1</a></li>--}}
+                        {{--<li><a href="">2</a></li>--}}
+                        {{--<li><a href="">3</a></li>--}}
+                        {{--<li><a href="">4</a></li>--}}
+                        {{--<li><a href="">5</a></li>--}}
+                        {{--<li><a href=""><i class="fa fa-chevron-right"></i></a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
             </div>
         </footer>
     </div>

@@ -7,17 +7,25 @@
 
     <div class="row">
         <div class="col-sm-8 row">
-            <div class="col-sm-4">
-                <img src="{{ asset('images/pasteur.jpg') }}" class="w-full" alt="pasteur">
+            <div class="col-sm-5">
+                <img src="{{ asset('images/pasteur.jpeg') }}" class="w-full" alt="pasteur">
             </div>
-            <div class="col-sm-8">
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum."
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
+            <div class="col-sm-7">
+                <p>
+                    « Halalao ny itoeran’ny lainao, ary aoka hohenjanina ny ambaindainao, ka aza avela hisy hiketrona, halavao ny kofehinao, ary aoreno mafy ny tsiman-dainao ; fa hiitatra any amin’ny ankavanana sy any amin’ny ankavia ianao »
+                    (Isaia 54 :2-3a)
+                </p>
+                <p>
+                    Andron’ny serasera izao andro ankehitriny izao. Tena ilaina ary ny mifampita vaovao mari-pototra sy mitondra soa ho an’ny rehetra, indrindra ho an’ny Fiangonan’ny Tompo. Ny FJKM Ilanivato Misionera  ary dia mizara ny traikefany ho fijoroany vavolombelona  “mba hahaizantsika[-nareo] mbamin’ny olona masina rehetra ny hahafantatra tsara izay sakany sy lavany ary hahavony sy halaliny, ary hahalala ny fitiavan’i Kristy, izay mihoatra noho ny fahalalana, mba hamenoana anareo ho amin’ny fahafenonan’Andriamanitra rehetra”(Efesiana 3 :18-19). Ao anatin’ny fifampizarana no ho fantatry ny fiangonana ny fahafenoan’ny Tompo, fa sady mahazo ny izaràna no mandray tombony koa ny mpizara, ho fampiorenana ny Tenan’i Kristy eto an-tany.
+                </p>
+                <p>Mahazoa ary izay soa  ato anatiny izay azonay omena. Dia ho aminareo ny Tompo; ary ho an’Andriamanitra irery ny voninahitra .
+                </p>
+                <p>
+                    <span class="pull-right">
+                        Ny Mpitandrina
+                    FJKM Ilanivato Misionera
+                    </span>
+                </p>
             </div>
         </div>
         <div class="col-sm-4 edito">
@@ -41,6 +49,7 @@
             </div>
         </div>
     </div>
+    <br>
     <div class="row">
         <h4>
             IREO VAOVAO
@@ -56,15 +65,15 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="la.jpg" alt="Los Angeles" style="width:100%;">
+                    <img src="la.jpg" alt="" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+                    <img src="chicago.jpg" alt="" style="width:100%;">
                 </div>
 
                 <div class="item">
-                    <img src="ny.jpg" alt="New york" style="width:100%;">
+                    <img src="ny.jpg" alt="" style="width:100%;">
                 </div>
             </div>
 

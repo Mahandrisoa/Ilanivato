@@ -12,7 +12,7 @@ class BureauController extends Controller
     public function index()
     {
         $group = Auth::user()->group;
-        return view('member::bureau.index')->with(['group' => $group]);
+        return view('member::bureau.index', compact('group'));
     }
 
     /**
@@ -24,32 +24,30 @@ class BureauController extends Controller
         return view('member::create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
+    public function editAll()
+    {
+        $group = Auth::user()->group;
+        return view('member::bureau.edit',compact('group'));
+    }
+
     public function store(Request $request)
     {
+        $group = Auth::user()->group;
+        $group->president->fill(['name' => $request->request->get('president_name')])->save();
+        $group->vicePresident->fill(['name' => $request->request->get('vice_president_name')])->save();
+        $group->secretaire->fill(['name' => $request->request->get('secretaire_name')])->save();
+        $group->comptable->fill(['name' => $request->request->get('comptable_name')])->save();
+        $group->tresorier->fill(['name' => $request->request->get('tresorier_name')])->save();
+        return redirect()->route('bureaux.index');
     }
 
-    /**
-     * Show the specified resource.
-     * @return Response
-     */
     public function show()
     {
-        return view('member::show');
+        $group = Auth::user()->group;
+        return view('member::bureau.edit',compact('group'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
-    {
-        return view('member::edit');
-    }
+
 
     /**
      * Update the specified resource in storage.

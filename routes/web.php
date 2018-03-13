@@ -36,12 +36,33 @@ Route::get('/asa-vavolombelona', 'fgMitory\fieveranaMahaOlonaController@asaVavol
 /**
  * ssaf
  */
+Route::get('/sekoly-alahady', 'ssaf\sampana\sekolyAlahadyController@index')->name('sekoly-alahady');
+Route::get('/stk', 'ssaf\sampana\stkController@index')->name('stk');
+Route::get('/slk', 'ssaf\sampana\slkController@index')->name('slk');
+Route::get('/sampati', 'ssaf\sampana\sampatiController@index')->name('sampati');
+Route::get('/svm', 'ssaf\sampana\svmController@index')->name('svm');
+Route::get('/vfl', 'ssaf\sampana\vflController@index')->name('vfl');
+Route::get('/dorkasy', 'ssaf\sampana\dorkasyController@index')->name('dorkasy');
+Route::get('/fifohazana', 'ssaf\sampana\fifohazanaController@index')->name('fifohazana');
 
+Route::get('/sekoly','ssaf\sampanAsa\sekolyController@index')->name('sekoly');
+Route::get('/asa-lazara','ssaf\sampanAsa\asaLazaraController@index')->name('asa-lazara');
+Route::get('/aff','ssaf\sampanAsa\affController@index')->name('aff');
+
+Route::get('/fifa','ssaf\fikambanana\fifaController@index')->name('fifa');
+Route::get('/diakona-sy-loholona','ssaf\fikambanana\diakonaLoholonaController@index')->name('diakona-sy-loholona');
+Route::get('/gafli','ssaf\fikambanana\gafliController@index')->name('gafli');
+Route::get('/mpitoriteny-sy-katekista','ssaf\fikambanana\mpitoritenyKatekistaController@index')->name('mpitoriteny-sy-katekista');
 /**
  * zadi
  */
-Route::get('/zadi', 'zadi\zadiController@index');
+Route::get('/zadi', 'zadi\zadiController@index')->name('zadi');
 Route::get('/calendars', 'VisitorController@getCalendars')->name('calendars');
+Route::get('/mahafantatra-feno-ny-hevitr-Andriamanitra','MHFController@index')->name('mfha');
+Route::get('/fampianarana','FampianaranaController@index')->name('fampianarana');
+Route::get('/fampianarana/{fampianarana}','FampianaranaController@show')->name('fampianarana.show');
+Route::get('/fiangonana-misionera','FiangonanaMisioneraController@index')->name('fiangonana-misionera');
+Route::get('/fiangonana-misionera-missions','FiangonanaMisioneraController@missions')->name('fiangonana-misionera.missions');
 
 Auth::routes();
 

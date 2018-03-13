@@ -5,6 +5,7 @@ namespace Modules\Member\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Member\Entities\Post;
 use Modules\Member\Entities\TypePost;
 use Modules\Member\Http\Requests\CreatePostRequest;
 use Modules\Member\Http\Services\Post\PostServiceInterface;
@@ -60,13 +61,11 @@ class FiombonanaController extends Controller
         return view('member::posts.fiombonana.show',compact('post'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
-    public function edit()
+    public function edit($id)
     {
-        return view('member::edit');
+        $post = Post::find($id);
+        $types = TypePost::all()->where('type_post_id', '=', 5)->pluck('libelleType', 'id')->toArray();
+        return view('member::posts.fiombonana.edit',compact('post','types'));
     }
 
     /**
@@ -74,15 +73,16 @@ class FiombonanaController extends Controller
      * @param  Request $request
      * @return Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
+        $post = Post::find($id);
+        $this->postService->update($request,$post);
+        return redirect()->route('fiombonana.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
-    public function destroy()
+    public function destroy($id)
     {
+        $this->postService->delete($id);
+        return redirect()->route('fiombonana.index');
     }
 }

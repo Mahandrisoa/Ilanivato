@@ -18,12 +18,12 @@
             </div>
             <div id="c_1" class="collapse in">
                 <div class="box-body">
-                    <p class="text-sm text-muted"><span class="text-md pull-left w-32 m-r rounded success">A</span>
+                    <p class="text-sm text-muted">
                         {{ $post->content }}
                     </p>
                 </div>
-                @foreach($post->images as $image)
-                    <img src="{{ $image->path }}" alt="">
+                @foreach($post->images() as $image)
+                    <img src="{{ $image->image_path }}" alt="">
                 @endforeach
             </div>
         </div>

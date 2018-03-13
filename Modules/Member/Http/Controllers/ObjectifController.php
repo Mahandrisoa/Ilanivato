@@ -21,6 +21,11 @@ class ObjectifController extends Controller
         return view('member::objectif.index')->with(['objectifs' => $objectifs]);
     }
 
+    public function create()
+    {
+        return view('member::objectif.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      * @param  Request $request

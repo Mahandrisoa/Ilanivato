@@ -21,7 +21,7 @@ class VisitorController extends Controller
 
     public function getCalendars()
     {
-        $calendars = Calendar::orderBy('date', 'desc')->get();
+        $calendars = Calendar::orderBy('date', 'asc')->get();
         return $calendars;
     }
 

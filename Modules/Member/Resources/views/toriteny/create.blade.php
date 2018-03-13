@@ -10,24 +10,33 @@
             <h5 class="m-b-0 _300">Toriteny</h5>
         </div>
         <div class="box-body">
-            {{ Form::open( array('route' => array('toriteny-member.store'))) }}
+            {{ Form::open( array('route' => 'toriteny-member.store','files'=>true )) }}
             {{ csrf_field() }}
             {{ Form::hidden('group_id',$group_id) }}
             <div class="form-group row">
-                <label class="col-sm-8 form-control-label">Date</label>
+                <label class="col-sm-8 form-control-label">Daty</label>
                 <div class="col-sm-4 has-feedback">
                     <input type="text" name="date" id="single_cal" class="form-control has-feedback-left">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="" class="col-sm-2 form-control-label">Auteur</label>
+                <label for="" class="col-sm-2 form-control-label">Mpanoratra</label>
                 <div class="col-sm-10 pull-right">
-                    {{ Form::text('author','',array('class' => 'form-control','required' => true)) }}
+                    {{ Form::text('author','',array('class' => 'form-control','required' => true,'autocomplete' => false )) }}
                 </div>
             </div>
             <div class="form-group row">
                 <label>Contenu</label>
                 {{ Form::textarea('content', null , array('class' => 'form-control','rows'=> 10,'placeholder' => '','required' => true,'id'=>'editor')) }}
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 form-control-label">Audio</label>
+                <div class="col-sm-10">
+                    <div class="form-file">
+                        {!! Form::file('audio', array('class' => 'form-control','required'=> true)) !!}
+                        <button class="btn white">Safidio ny version audio ...</button>
+                    </div>
+                </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-12">

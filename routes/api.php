@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
+
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::delete('fg-misionera-image/{id}', '\Modules\Member\Http\Controllers\FgMImageController@destroy');
+
+Route::get('mahantatra-feno/mois={mois}&jour={jour}','MHFController@getMhf');

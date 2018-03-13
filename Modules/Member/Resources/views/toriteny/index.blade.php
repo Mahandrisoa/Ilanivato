@@ -30,7 +30,7 @@
                                             <a class="dropdown-item"
                                                href="{{ route('toriteny-member.destroy', ['toriteny_member' => $t]) }}"
                                                onclick="event.preventDefault();document.getElementById('toritenyForm').submit();">Supprimer</a>
-                                            {!! Form::open(['method' => 'DELETE','route' => ['toriteny.destroy', 'toriteny_member' => $t ],'id' => 'toritenyForm' ]) !!}
+                                            {!! Form::open(['method' => 'DELETE','route' => ['toriteny-member.destroy', 'toriteny_member' => $t->id ],'id' => 'toritenyForm' ]) !!}
                                             {!! Form::close() !!}
                                         </div>
                                     </li>

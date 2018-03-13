@@ -9,7 +9,7 @@ class Group extends Model
 {
     use Notifiable;
 
-    protected $fillable = ['name', 'interlude', 'date_creation', 'directoryName', 'hasToriteny'];
+    protected $fillable = ['name', 'interlude', 'directoryName', 'hasToriteny'];
 
     protected $guarded = ['id'];
 

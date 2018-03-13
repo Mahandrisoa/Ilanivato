@@ -14,4 +14,8 @@ class Historique extends Model
     {
         return $this->belongsTo('App\Group');
     }
+
+    public function images() {
+        return $this->hasMany('Modules\Member\Entities\HistoriqueImage');
+    }
 }

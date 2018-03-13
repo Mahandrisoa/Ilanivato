@@ -30,6 +30,21 @@
                 {{ Form::textarea('content',$toriteny->content, array('class' => 'form-control','rows'=> 10,'placeholder' => '','required' => true,'id'=>'editor')) }}
             </div>
             <div class="form-group row">
+                <label for="change-audio">
+                    Hanova toriteny mp3
+                </label>
+                <input type="checkbox" id="change-audio" name="change-audio" class="change-audio">
+            </div>
+            <div class="form-group row audio-container">
+                <label class="col-sm-2 form-control-label">Audio</label>
+                <div class="col-sm-10">
+                    <div class="form-file">
+                        {!! Form::file('audio', array('class' => 'form-control','required'=> true)) !!}
+                        <button class="btn white">Safidio ny version audio ...</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-sm-12">
                     {{ Form::submit('Valider', array('class' => 'btn pull-right btn-sm amber-500')) }}
                 </div>
@@ -43,7 +58,7 @@
     <script type="application/javascript" src="{{ asset('js/scripts/moment.min.js') }}"></script>
     <script type="application/javascript" src="{{ asset('js/scripts/daterangepicker.js') }}"></script>
     <script type="application/javascript">
-        $(document).ready(function () {
+        $(function () {
             var today = '{{ $toriteny->date }}',
                     dateArray = today.split('-'),
                     fDate = dateArray.reverse().join('-');
@@ -56,6 +71,16 @@
                 }
             }, function (start, end, label) {
                 console.log(start.toISOString(), end.toISOString(), label);
+            });
+
+            $('.change-audio').on('change',function (e) {
+                var val = $(this).val();
+                console.log(val);
+                if (val) {
+                    $('.audio-container').addClass('show');
+                } else {
+                    $('.audio-container').addClass('show');
+                }
             });
         });
     </script>

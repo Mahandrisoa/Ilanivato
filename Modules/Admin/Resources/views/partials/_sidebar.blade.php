@@ -13,12 +13,18 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link block" href="{{ route('groups.index') }}">
-                    Sampana,Sampan'Asa,Fikambanana
+                    SSAF
+                    {{--<span class="nav-label">--}}
+                        {{--<b class="label red">8</b>--}}
+                      {{--</span>--}}
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link block" href="{{ route('admin.posts.index') }}">
                     Publications
+                    <span class="nav-label hide">
+                        <b class="label red label-publication"></b>
+                      </span>
                 </a>
             </li>
         </ul>

@@ -18,7 +18,6 @@ class CreateGroupsTable extends Migration
             $table->string('name')->unique();
             $table->longText('interlude')->nullable();
             $table->string('avatar')->default('default.jpg');
-            $table->date('date_creation')->nullable();
             $table->string('directoryName');
             $table->timestamps();
         });

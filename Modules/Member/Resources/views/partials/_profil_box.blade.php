@@ -6,11 +6,7 @@
                     <i class="material-icons md-18">&#xe164;</i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-scale pull-right">
-                    <a class="dropdown-item" href>Activities</a>
-                    <a class="dropdown-item" href>Feed</a>
-                    <div class="dropdown-item" href>Photo</div>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item">Follow</a>
+                    <a class="dropdown-item" href>Changer de photo de groupe</a>
                 </div>
             </li>
         </ul>
@@ -40,7 +36,7 @@
     <div class="p-a">
         <ul class="nav" ui-nav="">
             <li class="nav-header hidden-folded">
-                <small class="text-muted">Main</small>
+                <small class="text-muted">Tableau de bord</small>
             </li>
             @if(Auth::user()->group->hasToriteny)
                 <li>
@@ -51,7 +47,23 @@
                         <span class="nav-text">Toriteny</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('vaovao-member.index') }}">
+                  <span class="nav-icon">
+                        <i class="fa fa-newspaper-o"></i>
+                    </span>
+                        <span class="nav-text">Vaovao</span>
+                    </a>
+                </li>
             @endif
+            <li>
+                <a href="{{ route('histories.index')  }}">
+                  <span class="nav-icon">
+                        <i class="fa fa-history"></i>
+                  </span>
+                    <span class="nav-text">Tantara</span>
+                </a>
+            </li>
             <li>
                 <a href="{{ route('bureaux.index')  }}">
                   <span class="nav-icon">
@@ -76,6 +88,28 @@
                     <span class="nav-text">Calendrier</span>
                 </a>
             </li>
+
+            @if(Auth::user()->group->hasToriteny)
+            <li class="nav-header hidden-folded">
+                <small class="text-muted">Fampianarana</small>
+            </li>
+            <li>
+                <a href="{{ route('fiangonana-misionera-member.index') }}">
+                  <span class="nav-icon">
+                    <i class="fa fa-book"></i>
+                  </span>
+                    <span class="nav-text">Fiangonana Misionera</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('fampianarana-member.index') }}">
+                  <span class="nav-icon">
+                    <i class="fa fa-book"></i>
+                  </span>
+                    <span class="nav-text">Fampianarana 80</span>
+                </a>
+            </li>
+            @endif
 
             <li class="nav-header hidden-folded">
                 <small class="text-muted">Fiangonana Lehibe sy Mitory</small>

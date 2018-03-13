@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('css/material-design-icons/material-design-icons.css') }}"
           type="text/css"/>
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}" type="text/css"/>
+
     <link rel="stylesheet" href="{{ asset('css/fjkm-ilanivato.css') }}" type="text/css"/>
     @yield('css')
 </head>
@@ -25,9 +26,15 @@
 </a>
 <header id="top" role="banner">
     <div class="banner h-full">
-        <a href="{{route('login')}}" class="btn btn-xs btn-yellow pull-right light">Se connecter</a>
+        <a href="{{route('login')}}" class="btn btn-xs btn-yellow pull-right light">
+            @auth
+            Espace administration
+            @else
+                Se connecter
+                @endauth
+        </a>
         <h1 class="light titre">FJKM ILANIVATO MISIONERA</h1>
-        <p class="light sous-titre">Fiangonana Lehibe sy Misionera</p>
+        <p class="light sous-titre">Fiangonana Lehibe sy Mitory</p>
     </div>
     <img src="{{ asset('images/fjkm.png') }}" alt="Fjkm">
     <div class="news">
@@ -48,7 +55,7 @@
                 <a href="{{route('fg-mitory')}}" id="fg-mitory">FIANGONANA MITORY</a>
             </li>
             <li>
-                <a href="{{route('fg-about')}}" id="zadi">AKANY ZADI</a>
+                <a href="{{route('zadi')}}" id="zadi">AKANY ZADI</a>
             </li>
             <li>
                 <a href="{{route('fg-ssaf')}}" id="ssaf">SSAF</a>
@@ -57,9 +64,6 @@
                 <a href="{{route('fg-about')}}">MOMBA NY FIANGONANA</a>
             </li>
         </ul>
-        {{--<ul class="nav navbar-nav navbar-right">--}}
-        {{--<li><a href="{{route('fg-blog')}}">Blog</a></li>--}}
-        {{--</ul>--}}
     </nav>
 </div>
 <div class="w-full drop-content hidden">
@@ -68,6 +72,9 @@
             <h4>
                 FIANGONANA LEHIBE
             </h4>
+            "Mandra-pahatongantsika rehetra ho amin’ ny firaisan’ ny finoana sy ny fahalalana tsara ny Zanak’
+            Andriamanitra, ka ho lehilahy lehibe, mahatratra ny ohatry ny halehiben’ ny fahafenoan’ i Kristy".
+            <i>Efesiana 4:13</i>
         </div>
         <div class="col-md-3 h-full" style="border-left: 2px solid #C7C2BC;">
             <div class="title">
@@ -113,6 +120,9 @@
             <h4>
                 FIANGONANA MITORY
             </h4>
+            "Ary hoy Izy taminy: Mandehana any amin’ izao tontolo izao hianareo, ka mitoria ny filazantsara amin’ ny
+            olombelona rehetra"
+            <i>Marka 16: 15</i>
         </div>
         <div class="col-md-4 h-full" style="border-left: 2px solid #C7C2BC;">
             <div class="title">
@@ -160,14 +170,14 @@
             </div>
             <div class="content">
                 <ul>
-                    <li><a href="">Sekoly alahady</a></li>
-                    <li><a href="">Lehilahy Kristianina</a></li>
-                    <li><a href="">Tanora Kristianina</a></li>
-                    <li><a href="">Vokovoko manga</a></li>
-                    <li><a href="">Vondrona Fototra Laika</a></li>
-                    <li><a href="">Mpanazava sy Tily</a></li>
-                    <li><a href="">Dorkasy</a></li>
-                    <li><a href="">Fifohazana</a></li>
+                    <li><a href="{{ route('sekoly-alahady') }}">Sekoly alahady</a></li>
+                    <li><a href="{{ route('slk') }}">Lehilahy Kristianina</a></li>
+                    <li><a href="{{ route('stk') }}">Tanora Kristianina</a></li>
+                    <li><a href="{{ route('svm') }}">Vokovoko manga</a></li>
+                    <li><a href="{{ route('vfl') }}">Vondrona Fototra Laika</a></li>
+                    <li><a href="{{ route('sampati') }}">Mpanazava sy Tily</a></li>
+                    <li><a href="{{ route('dorkasy') }}">Dorkasy</a></li>
+                    <li><a href="{{ route('fifohazana') }}">Fifohazana</a></li>
                 </ul>
             </div>
         </div>
@@ -177,9 +187,9 @@
             </div>
             <div class="content">
                 <ul>
-                    <li><a href="">SEKOLY</a></li>
-                    <li><a href="">Asa Lazara</a></li>
-                    <li><a href="">Asa Fitoriana ny Filazantsara</a></li>
+                    <li><a href="{{ route('sekoly') }}">SEKOLY</a></li>
+                    <li><a href="{{ route('asa-lazara') }}">Asa Lazara</a></li>
+                    <li><a href="{{ route('aff') }}">Asa Fitoriana ny Filazantsara</a></li>
                 </ul>
             </div>
         </div>
@@ -189,10 +199,10 @@
             </div>
             <div class="content">
                 <ul>
-                    <li><a href="">Fahatanjahantena</a></li>
-                    <li><a href="">Diakona sy Loholona</a></li>
-                    <li><a href="">GAFLI</a></li>
-                    <li><a href="">Mpitoriteny sy Katekista</a></li>
+                    <li><a href="{{ route('fifa') }}">Fahatanjahantena</a></li>
+                    <li><a href="{{ route('diakona-sy-loholona') }}">Diakona sy Loholona</a></li>
+                    <li><a href="{{ route('gafli') }}">GAFLI</a></li>
+                    <li><a href="{{ route('mpitoriteny-sy-katekista') }}">Mpitoriteny sy Katekista</a></li>
                 </ul>
             </div>
         </div>
@@ -214,13 +224,13 @@
                     </div>
                     <div class="row footer-box-body">
                         <div class="col-sm-4 h-full">
-                            <img src="{{ asset('images/pasteur.jpg') }}" class="w-full" alt="pasteur">
+                            <img src="{{ asset('images/eglise.png') }}" class="w-full" alt="pasteur">
                         </div>
                         <div class="col-sm-8 h-full">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                             <br>
-                            <a href="http://localhost:8000/home/toriteny/2"
+                            <a href="{{ route('fiangonana-misionera') }}"
                                class="btn btn-yellow light pull-right">Lire</a>
                         </div>
                     </div>
@@ -234,13 +244,13 @@
                     </div>
                     <div class="row footer-box-body">
                         <div class="col-sm-4 h-full">
-                            <img src="{{ asset('images/pasteur.jpg') }}" class="w-full" alt="pasteur">
+                            <img src="{{ asset('images/study-bible.jpg') }}" class="w-full" alt="pasteur">
                         </div>
                         <div class="col-sm-8 h-full">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                             <br>
-                            <a href="http://localhost:8000/home/toriteny/2"
+                            <a href="{{ route('fampianarana') }}"
                                class="btn btn-yellow light pull-right">Lire</a>
                         </div>
                     </div>
@@ -254,13 +264,13 @@
                     </div>
                     <div class="row footer-box-body">
                         <div class="col-sm-4 h-full">
-                            <img src="{{ asset('images/pasteur.jpg') }}" class="w-full" alt="pasteur">
+                            <img src="{{ asset('images/bible-2.png') }}" class="w-full" alt="pasteur">
                         </div>
                         <div class="col-sm-8 h-full">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                             ut labore et dolore magna aliqua. Ut enim ad minim veniam.
                             <br>
-                            <a href="http://localhost:8000/home/toriteny/2"
+                            <a href="{{ route('mfha') }}"
                                class="btn btn-yellow light">Lire</a>
                         </div>
                     </div>
@@ -277,11 +287,14 @@
 </footer>
 
 
-<script type="text/javascript" src="{{ asset('js/laroute.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/laroute.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bootstrap/js/jquery.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/moment.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/moment.fr.js') }}"></script>
 <script>
     $(function () {
+
         var drops = $('.drop-content');
 
         drops.mouseleave(function () {
@@ -310,17 +323,7 @@
                 $(drops[1]).addClass('hidden');
             }
         });
-        /**
-         * zadi
-         */
-        $('#zadi').mouseover(function (e) {
-            $(drops[2]).removeClass('hidden');
-        });
-        $('#zadi').mouseleave(function (e) {
-            if (!$(e.relatedTarget).parents().hasClass('drop-content')) {
-                $(drops[2]).addClass('hidden');
-            }
-        });
+
         /**
          * ssaf
          */
@@ -370,12 +373,15 @@
             return temp;
         }
 
+
         function render(data, target) {
             var content = '';
             $.each(data, function (index, obj) {
+                var date = moment(obj.date);
+                date = date.locale('fr').format('LL');
                 content += '' +
                         '<li class="animated fadeInRightBig">' +
-                        '<div class="text-yellow">' + obj.date +
+                        '<div class="text-yellow">' + date +
                         '</div>' +
                         '<div class="light">' + obj.event +
                         '</div>' +

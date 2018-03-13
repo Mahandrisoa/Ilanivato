@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Modules\Member\Entities\Toriteny;
+use Illuminate\Support\Facades\File;
 
 class ToritenyController extends Controller
 {
@@ -26,7 +27,13 @@ class ToritenyController extends Controller
         $dateInput = $request->get('date');
         $date = new \DateTime($this->formatDate($dateInput));
         $toriteny = new Toriteny($request->all());
+
+        $audio = $request->file('audio');
+        $audioName = time().'.'.$request->file('audio')->getClientOriginalExtension();
+        $location = public_path() . '/audio/toriteny/';
+        $audio->move($location, $audioName);
         $toriteny->date = $date;
+        $toriteny->audio = $audioName;
         $toriteny->save();
         return redirect()->route('toriteny-member.index');
     }
@@ -57,8 +64,10 @@ class ToritenyController extends Controller
         return redirect()->route('toriteny-member.index');
     }
 
-    public function destroy(Toriteny $toriteny)
+    public function destroy($id)
     {
+        $toriteny = Toriteny::find($id);
+        File::delete(public_path().'/audio/toriteny/'. $toriteny->audio);
         $toriteny->delete();
         return redirect()->route('toriteny-member.index');
     }

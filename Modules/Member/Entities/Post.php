@@ -25,6 +25,6 @@ class Post extends Model
 
     public function images()
     {
-        return $this->hasMany('Modules\Member\Entities\Image');
+        return $this->hasMany('Modules\Member\Entities\PostImage');
     }
 }

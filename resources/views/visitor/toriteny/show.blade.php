@@ -4,14 +4,6 @@
 @endsection
 
 @section('news')
-    {{--<ul>--}}
-    {{--@foreach($events as $e)--}}
-    {{--<li>--}}
-    {{--<div class="text-yellow">{{ date('d/m/Y', strtotime($e->date)) }}</div>--}}
-    {{--<div class="light">{{ $e->event }}</div>--}}
-    {{--</li>--}}
-    {{--@endforeach--}}
-    {{--</ul>--}}
 @endsection
 @section('content')
     <div class="row">
@@ -26,7 +18,7 @@
 
             <div style="padding-top: 50px;padding-right:50px;">
                 <audio controls="controls" preload class="w-full">
-                    <source src="" type="audio/mpeg">
+                    <source src="{{ asset('audio/toriteny/'. $toriteny->audio) }}" type="audio/mpeg">
                     Votre navigateur ne supporte pas l'intégration du lecteur.
                 </audio>
             </div>
