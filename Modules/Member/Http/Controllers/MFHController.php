@@ -2,6 +2,7 @@
 
 namespace Modules\Member\Http\Controllers;
 
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
@@ -23,8 +24,12 @@ class MFHController extends Controller
     public function store(Request $request)
     {
         $mfh = new MahafantatraFeno($request->all());
-        $mfh->save();
-        return redirect()->route('mahafantatra-feno.index');
+        try {
+            $mfh->save();
+        }catch (QueryException $e){
+            return response()->json(null,500);
+        }
+        return response()->json($mfh, 201);
     }
 
     public function show()
@@ -47,6 +52,7 @@ class MFHController extends Controller
 
     public function destroy(MahafantatraFeno $mfh)
     {
+        dd($mfh);
         $mfh->delete();
         return redirect()->route('mahafantatra-feno.index');
     }

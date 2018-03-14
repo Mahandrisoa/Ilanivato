@@ -48,6 +48,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('mahafantatra-feno-member.index') }}">
+                  <span class="nav-icon">
+                        <i class="fa fa-book"></i>
+                    </span>
+                        <span class="nav-text">Mahafantatra feno</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('vaovao-member.index') }}">
                   <span class="nav-icon">
                         <i class="fa fa-newspaper-o"></i>
