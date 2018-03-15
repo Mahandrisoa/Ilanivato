@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::delete('fg-misionera-image/{id}', '\Modules\Member\Http\Controllers\FgMImageController@destroy');
 
 Route::get('mahantatra-feno/mois={mois}&jour={jour}','MHFController@getMhf');
+
+Route::delete('mahanfantatra-feno','\Modules\Member\Http\Controllers\MFHController@destroy')->name('api.mhf.delete');
