@@ -4,7 +4,7 @@
     <style>
         .accordion {
             background-color: #E9C35E;
-            color: white!important;
+            color: white !important;
             cursor: pointer;
             padding: 18px;
             width: 100%;
@@ -114,7 +114,8 @@
                 </div>
             </div>
             <button class="accordion">
-                Ireo biraom-piangonana</button>
+                Ireo biraom-piangonana
+            </button>
             <div class="panel-about">
                 <p>
                     Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
@@ -125,6 +126,42 @@
                     lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
                     probably haven't heard of them accusamus labore sustainable VHS.
                 </p>
+                <div class="row">
+                    <div class="col-sm-4"><b>Ny Filoha : </b></div>
+                    <div class="col-sm-8">
+                        <p>{{ $group->president->name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><b>Ny mpitan-tsoratry ny fivoriana : </b></div>
+                    <div class="col-sm-8">
+                        <p>{{ $group->secretaire->name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><b>Ny mpitan-tsoratry ny vola : </b></div>
+                    <div class="col-sm-8">
+                        <p>{{ $group->comptable->name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><b>Ny mpitahiry vola : </b></div>
+                    <div class="col-sm-8">
+                        <p>{{ $group->tresorier->name }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><b>Ny mpanolo-tsaina : </b></div>
+                    <div class="col-sm-8">
+                        @foreach($group->conseillers as $conseiller)
+                            <p>{{ $conseiller->name }}</p>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
     </div>

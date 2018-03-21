@@ -18,7 +18,7 @@
                         </label>
                         <div class="col-md-8">
                             <input type="text" class="form-control pull-right" name="president_name"
-                                   value="{{ $group->president->name }}">
+                                   value="{{ isset($group->president->name) ? $group->president->name:'' }}">
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control pull-right" name="vice_president_name"
-                               value="{{ $group->vicePresident->name }}">
+                               value="{{ isset($group->vicePresident->name) ? $group->vicePresident->name:'' }}">
                     </div>
                 </div>
                 <div class="list-item">
@@ -40,7 +40,7 @@
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control pull-right" name="secretaire_name"
-                               value="{{ $group->secretaire->name }}">
+                               value="{{ isset($group->secretaire->name) ? $group->secretaire->name:'' }}">
                     </div>
                 </div>
                 <div class="list-item">
@@ -51,7 +51,7 @@
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control pull-right" name="comptable_name"
-                               value="{{ $group->comptable->name }}">
+                               value="{{ isset($group->comptable->name) ? $group->comptable->name:'' }}">
                     </div>
                 </div>
                 <div class="list-item">
@@ -62,7 +62,7 @@
                     </label>
                     <div class="col-md-8">
                         <input type="text" class="form-control pull-right" name="tresorier_name"
-                               value="{{ $group->tresorier->name }}">
+                               value="{{ isset($group->tresorier->name) ? $group->tresorier->name:'' }}">
                     </div>
                 </div>
                 <div class="list-item">

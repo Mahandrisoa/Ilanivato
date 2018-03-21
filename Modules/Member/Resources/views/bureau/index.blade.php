@@ -24,7 +24,8 @@
                     </div>
                 </h6>
                 <div class="list-body">
-                    <a href="" class="_500 pull-right">{{ isset($group->vicePresident->name) ? : '' }}</a>
+                    <a href=""
+                       class="_500 pull-right">{{ isset($group->vicePresident->name) ? $group->vicePresident->name: '' }}</a>
                 </div>
             </div>
             <div class="list-item">
@@ -34,7 +35,8 @@
                     </div>
                 </h6>
                 <div class="list-body">
-                    <a href="" class="_500 pull-right">{{ isset($group->secretaire->name)? : '' }}</a>
+                    <a href=""
+                       class="_500 pull-right">{{ isset($group->secretaire->name)? $group->secretaire->name: '' }}</a>
                 </div>
             </div>
             <div class="list-item">
@@ -43,7 +45,8 @@
                     </div>
                 </h6>
                 <div class="list-body">
-                    <a href="" class="_500 pull-right">{{ isset($group->comptable->name)? : '' }}</a>
+                    <a href=""
+                       class="_500 pull-right">{{ isset($group->comptable->name)? $group->comptable->name: '' }}</a>
                 </div>
             </div>
             <div class="list-item">
@@ -52,7 +55,8 @@
                     </div>
                 </h6>
                 <div class="list-body">
-                    <a href="" class="_500 pull-right">{{ isset($group->tresorier->name)? :'' }}</a>
+                    <a href=""
+                       class="_500 pull-right">{{ isset($group->tresorier->name)?$group->tresorier->name :'' }}</a>
                 </div>
             </div>
             <div class="list-item">

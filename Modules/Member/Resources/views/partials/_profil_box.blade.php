@@ -56,6 +56,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('perikopa') }}">
+                  <span class="nav-icon">
+                        <i class="fa fa-list"></i>
+                    </span>
+                        <span class="nav-text">Perikopa sy Lohahevitra FJKM</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('vaovao-member.index') }}">
                   <span class="nav-icon">
                         <i class="fa fa-newspaper-o"></i>

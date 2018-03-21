@@ -38,5 +38,8 @@ Route::group(['middleware' => ['web', 'auth'], 'prefix' => 'home', 'namespace' =
     
 
     Route::resource('/vaovao-member', 'VaovaoController');
+
+    Route::get('/perikopa', 'PerikopaController@index')->name('perikopa');
+    Route::post('/perikopa', 'PerikopaController@store')->name('perikopa.store');
 });
 

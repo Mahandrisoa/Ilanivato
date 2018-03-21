@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\ssaf\sampana;
 
-use Illuminate\Http\Request;
+use App\Group;
 use App\Http\Controllers\Controller;
 
 class sekolyAlahadyController extends Controller
 {
     public function index()
     {
-        return view('visitor.ssaf.sampana.sekoly-alahady');
+        $group = Group::find(65);
+        return view('visitor.ssaf.sampana.sekoly-alahady', compact('group'));
     }
 }

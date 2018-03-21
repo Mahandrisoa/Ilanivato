@@ -1,8 +1,7 @@
 @extends('member::layouts.master')
 @section('css')
     @parent
-    <link rel="stylesheet" href="{{ asset('css/prettify.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/daterangepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/daterangepicker/daterangepicker.css') }}">
 @show
 @section('section_center')
     <div class="row-col box">
@@ -49,8 +48,8 @@
 @endsection
 @section('js')
     @parent
-    <script type="application/javascript" src="{{ asset('js/scripts/moment.min.js') }}"></script>
-    <script type="application/javascript" src="{{ asset('js/scripts/daterangepicker.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('assets/moment.min.js') }}"></script>
+    <script type="application/javascript" src="{{ asset('assets/daterangepicker/daterangepicker.js') }}"></script>
     <script type="application/javascript">
         $(document).ready(function () {
             $('#single_cal').daterangepicker({

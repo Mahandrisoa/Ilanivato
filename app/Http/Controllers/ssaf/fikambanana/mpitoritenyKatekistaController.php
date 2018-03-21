@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\ssaf\fikambanana;
 
-use Illuminate\Http\Request;
+use App\Group;
 use App\Http\Controllers\Controller;
 
 class mpitoritenyKatekistaController extends Controller
 {
     public function index()
     {
-        return view('visitor.ssaf.fikambanana.fmk');
+        $group = Group::find(79);
+        return view('visitor.ssaf.fikambanana.fmk', compact('group'));
     }
 }

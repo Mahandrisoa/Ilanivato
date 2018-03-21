@@ -53,9 +53,6 @@
                 @endforeach
                 </tbody>
             </table>
-            @foreach($mfhs as $m)
-
-            @endforeach
         </div>
     </div>
 
@@ -65,7 +62,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Ajouter un nouveau verse
+                    <h4 class="modal-title">Ajouter un nouveau versets bibliques
                     </h4>
                 </div>
                 <div class="modal-body">
@@ -78,8 +75,21 @@
                     </div>
                     <div class="form-group row">
                         {{ Form::label('', 'Mois',['class'=>'col-sm-2 form-control-label' ]) }}
-                        <div class="col-sm-10 pull-right">
-                            <input type="number" min="1" max="12" name="mois" value="1" required="true">
+                        <div class="col-sm-4 pull-left">
+                            <select name="mois" id="" class="form-control" required="true">
+                                <option value="1">Janvier</option>
+                                <option value="2">Février</option>
+                                <option value="3">Mars</option>
+                                <option value="4">Avril</option>
+                                <option value="5">Mai</option>
+                                <option value="6">Juin</option>
+                                <option value="7">Juillet</option>
+                                <option value="8">Août</option>
+                                <option value="9">Septembre</option>
+                                <option value="10">Octobre</option>
+                                <option value="11">Novembre</option>
+                                <option value="12">Décembre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -108,7 +118,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-2 pull-right">
-                            <input type="submit" class="btn btn-sm primary" value="submit">
+                            <input type="submit" class="btn btn-sm primary" value="Soumettre">
                         </div>
                     </div>
                     {{ Form::close() }}

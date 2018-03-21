@@ -14,6 +14,8 @@
                 <p>
                     « Halalao ny itoeran’ny lainao, ary aoka hohenjanina ny ambaindainao, ka aza avela hisy hiketrona, halavao ny kofehinao, ary aoreno mafy ny tsiman-dainao ; fa hiitatra any amin’ny ankavanana sy any amin’ny ankavia ianao »
                     (Isaia 54 :2-3a)
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/415496175&color=%234373e2&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
                 </p>
                 <p>
                     Andron’ny serasera izao andro ankehitriny izao. Tena ilaina ary ny mifampita vaovao mari-pototra sy mitondra soa ho an’ny rehetra, indrindra ho an’ny Fiangonan’ny Tompo. Ny FJKM Ilanivato Misionera  ary dia mizara ny traikefany ho fijoroany vavolombelona  “mba hahaizantsika[-nareo] mbamin’ny olona masina rehetra ny hahafantatra tsara izay sakany sy lavany ary hahavony sy halaliny, ary hahalala ny fitiavan’i Kristy, izay mihoatra noho ny fahalalana, mba hamenoana anareo ho amin’ny fahafenonan’Andriamanitra rehetra”(Efesiana 3 :18-19). Ao anatin’ny fifampizarana no ho fantatry ny fiangonana ny fahafenoan’ny Tompo, fa sady mahazo ny izaràna no mandray tombony koa ny mpizara, ho fampiorenana ny Tenan’i Kristy eto an-tany.

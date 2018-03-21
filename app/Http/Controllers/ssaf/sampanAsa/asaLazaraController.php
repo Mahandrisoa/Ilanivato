@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\ssaf\sampanAsa;
 
-use Illuminate\Http\Request;
+use App\Group;
 use App\Http\Controllers\Controller;
 
 class asaLazaraController extends Controller
 {
     public function index()
     {
-        return view('visitor.ssaf.sampan-asa.asa-lazara');
+        $group = Group::find(74);
+        return view('visitor.ssaf.sampan-asa.asa-lazara', compact('group'));
     }
 }

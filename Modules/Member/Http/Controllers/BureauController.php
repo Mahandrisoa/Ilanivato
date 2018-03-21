@@ -6,12 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
+use Modules\Member\Entities\FKS;
 
 class BureauController extends Controller
 {
     public function index()
     {
         $group = Auth::user()->group;
+        if ($group->id == 73) {
+            $tale = FKS::where('poste', '=', 'Tale')->first();
+            $fks = FKS::all();
+            return view('member::fks.index', compact('tale', 'fks'));
+        }
         return view('member::bureau.index', compact('group'));
     }
 
