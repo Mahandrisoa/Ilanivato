@@ -25,9 +25,9 @@
                 <tr>
                     <th>Jour</th>
                     <th>Mois</th>
-                    <th>Versé biblique (Matin)</th>
+                    <th>Versets biblique (Matin)</th>
                     <th>Texte bibilque (Matin)</th>
-                    <th>Versé biblique (Soir)</th>
+                    <th>Versets biblique (Soir)</th>
                     <th>Texte biblique (Soir)</th>
                     <th>Actions</th>
                 </tr>
@@ -70,7 +70,7 @@
                     <div class="form-group row">
                         {{ Form::label('', 'Jour',['class'=>'col-sm-2 form-control-label' ]) }}
                         <div class="col-sm-10 pull-right">
-                            <input type="number" min="1" max="30" name="jour" value="1" required="true">
+                            <input type="number" min="1" max="31" name="jour" value="1" required="true">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        {{ Form::label('', 'Vérsé bibilique (Matin)',['class'=>'col-sm-2 form-control-label' ]) }}
+                        {{ Form::label('', 'Versets bibilique (Matin)',['class'=>'col-sm-2 form-control-label' ]) }}
                         <div class="col-sm-10 pull-right">
                             {{ Form::text('fandaharana_maraina', null , array('class' => 'form-control','placeholder' => '','required' => true)) }}
                         </div>
@@ -105,7 +105,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        {{ Form::label('andininy_hariva', 'Vérsé bibilique (Soir)',['class'=>'col-sm-2 form-control-label' ]) }}
+                        {{ Form::label('andininy_hariva', 'Versets bibilique (Soir)',['class'=>'col-sm-2 form-control-label' ]) }}
                         <div class="col-sm-10 pull-right">
                             {{ Form::text('fandaharana_hariva', null , array('class' => 'form-control','placeholder' => '','required' => true)) }}
                         </div>
